@@ -46,15 +46,15 @@ $ yum install sqlite-devel
 
 ###step 7: 安装 nodejs
 
-$ wget http://nodejs.org/dist/v0.6.18/node-v0.6.9.tar.gz
-$ tar zxvf node-v0.6.9.tar.gz
-$ cd node-v0.6.9
-$ ./configure --prefix=/usr/local/node
-$ make 
-$ sudo make install
-$ sudo ln -s   /usr/local/node/bin/node  /usr/sbin/node  
-$ sudo ln -s   /usr/local/node/bin/npm  /usr/sbin/npm
-
+$ wget http://nodejs.org/dist/v0.6.18/node-v0.6.9.tar.gz  
+$ tar zxvf node-v0.6.9.tar.gz  
+$ cd node-v0.6.9  
+$ ./configure --prefix=/usr/local/node  
+$ make   
+$ sudo make install  
+$ sudo ln -s   /usr/local/node/bin/node  /usr/sbin/node    
+$ sudo ln -s   /usr/local/node/bin/npm  /usr/sbin/npm  
+  
 ###step 8: 测试  
 $ rails new app
 
