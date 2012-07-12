@@ -1,17 +1,17 @@
 ###step 0: 安装 git
-  $ sudo yum install git-core git-gui git-doc
-  [rm -r ~/.ssh](或者备份)
-  $ ssh-keygen -t rsa -C emial_address@qq.com
-  [连续回车，默认将公钥放在～/.ssh/]
-  $ ssh -T git@github.com
+  $ sudo yum install git-core git-gui git-doc           
+  	[# rm -r ~/.ssh #]                             
+  $ ssh-keygen -t rsa -C emial_address@qq.com           
+  	[# 连续回车，默认将公钥放在～/.ssh/ #]          
+  $ ssh -T git@github.com          
 
 ###step 1: 安装必要组件，编译环境
 
-yum -y install make gcc openssl-devel zlib-devel         \
-               gcc gcc-c++ make autoconf readline-devel  \
-               curl-devel expat-devel gettext-devel      \
-               ncurses-devel sqlite3-devel mysql-devel   \
-               httpd-devel wget which
+yum -y install make gcc openssl-devel zlib-devel  \          
+	gcc gcc-c++ make autoconf readline-devel  \          
+	curl-devel expat-devel gettext-devel      \          
+	ncurses-devel sqlite3-devel mysql-devel   \          
+	httpd-devel wget which            
 
 ###step 2: 安装 yaml（解析Ruby所用）
 
@@ -46,15 +46,15 @@ $ yum install sqlite-devel
 
 ###step 7: 安装 nodejs
 
-$ wget http://nodejs.org/dist/v0.6.18/node-v0.6.9.tar.gz
-$ tar zxvf node-v0.6.9.tar.gz
-$ cd node-v0.6.9
-$ ./configure --prefix=/usr/local/node
-$ make 
-$ sudo make install
-$ sudo ln -s   /usr/local/node/bin/node  /usr/sbin/node  
-$ sudo ln -s   /usr/local/node/bin/npm  /usr/sbin/npm
-
+$ wget http://nodejs.org/dist/v0.6.18/node-v0.6.9.tar.gz  
+$ tar zxvf node-v0.6.9.tar.gz  
+$ cd node-v0.6.9  
+$ ./configure --prefix=/usr/local/node  
+$ make   
+$ sudo make install  
+$ sudo ln -s   /usr/local/node/bin/node  /usr/sbin/node    
+$ sudo ln -s   /usr/local/node/bin/npm  /usr/sbin/npm  
+  
 ###step 8: 测试  
 $ rails new app
 
@@ -71,3 +71,7 @@ $ rails new app
 
 	$ gem install execjs -v '1.4.0'
 	###############################################################################]
+
+$ cd app  
+
+$ rails server
