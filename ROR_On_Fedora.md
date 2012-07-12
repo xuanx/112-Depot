@@ -72,5 +72,5 @@ $ rails new app
 	$ gem install execjs -v '1.4.0'
 	###############################################################################]
 
-$ cd app
+$ cd app \n
 $ rails server
