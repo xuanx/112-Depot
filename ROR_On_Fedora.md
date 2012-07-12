@@ -1,8 +1,8 @@
 ###step 0: 安装 git
   $ sudo yum install git-core git-gui git-doc           
-  [rm -r ~/.ssh](或者备份)                              
+  	[rm -r ~/.ssh](或者备份)                              
   $ ssh-keygen -t rsa -C emial_address@qq.com           
-  [连续回车，默认将公钥放在～/.ssh/]          
+  	[连续回车，默认将公钥放在～/.ssh/]          
   $ ssh -T git@github.com          
 
 ###step 1: 安装必要组件，编译环境
