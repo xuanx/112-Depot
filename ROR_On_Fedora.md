@@ -7,10 +7,10 @@
 
 ###step 1: 安装必要组件，编译环境
 
-yum -y install make gcc openssl-devel zlib-devel         \
-               gcc gcc-c++ make autoconf readline-devel  \
-               curl-devel expat-devel gettext-devel      \
-               ncurses-devel sqlite3-devel mysql-devel   \
+yum -y install make gcc openssl-devel zlib-devel         
+               gcc gcc-c++ make autoconf readline-devel  
+               curl-devel expat-devel gettext-devel      
+               ncurses-devel sqlite3-devel mysql-devel   
                httpd-devel wget which
 
 ###step 2: 安装 yaml（解析Ruby所用）
