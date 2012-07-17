@@ -1,9 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<p>
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+<h1>
   <b>Title:</b>
   <%= @product.title %>
-</p>
+</h1>
 
 <p>
   <b>Description:</b>
