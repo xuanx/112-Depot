@@ -38,6 +38,13 @@
   font-size: small;
 }
 
+/* BEGIN: My css */
+#store {
+  margin: 0;
+  padding: 0;
+}
+/* END: My css*/
+
 #store #notice {
         color: #000;
         border: 2px solid red;
