@@ -4,10 +4,10 @@ class ProductsControllerTest < ActionController::TestCase
   setup do
     @product = products(:one)
     @update = {
-      :title       => 'Lorem Ipsum',
-      :description => 'Wibbles are fun !',
-      :image_url   => 'lorem.jpg',
-      :price       => 19.95
+       :title   => 'Lorem Ipsum',
+       :description   => 'Wibbles are fun!',
+       :image_url    => 'lorem.jpg',
+       :pice         => 19.95
     }
   end
 
@@ -52,5 +52,4 @@ class ProductsControllerTest < ActionController::TestCase
 
     assert_redirected_to products_path
   end
-
 end

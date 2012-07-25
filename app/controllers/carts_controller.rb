@@ -16,12 +16,12 @@ class CartsController < ApplicationController
     begin
       @cart = Cart.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      logger.error "Attempt t access invalid cart #{params[:id]}"
+      logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to store_url, :notice => 'Invalid cart'
-    else
+    else 
       respond_to do |format|
-        format.html # show.html.erb
-        format.xml  { render :xml => @cart }
+        format.html 
+        format.xml
       end
     end
   end
@@ -32,7 +32,7 @@ class CartsController < ApplicationController
     @cart = Cart.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # show.html.erb
       format.xml  { render :xml => @cart }
     end
   end
@@ -82,7 +82,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to(store_url, :notice => 'Your cart is currently empty')}
+      format.html { redirect_to(store_url) }
       format.xml  { head :ok }
     end
   end
