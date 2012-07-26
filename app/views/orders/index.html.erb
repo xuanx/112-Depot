@@ -27,3 +27,5 @@
 <br />
 
 <%= link_to 'New Order', new_order_path %>
+
+<%=will_paginate(@orders, :prev_label=>'Previous', :next_label=>'Next', :separator=>" | ") %>
