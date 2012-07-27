@@ -1,10 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name:	Dave Thomas
+#START_HIGHLIGHT
+  name: Dave Thomas
+#END_HIGHLIGHT
   address: MyText
+#START_HIGHLIGHT
   email: dave@example.org
+#END_HIGHLIGHT
+#START_HIGHLIGHT
   pay_type: Check
+#END_HIGHLIGHT
 
 two:
   name: MyString
