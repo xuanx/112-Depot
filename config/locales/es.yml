@@ -1,0 +1,8 @@
+es:
+  layouts:
+    application:
+      title:     "Publicaciones de Pragmatic"
+      home:      "Inicio"
+      questions: "Preguntas"
+      new:       "Noticias"
+      contact:   "Contacto"
