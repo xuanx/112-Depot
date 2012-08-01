@@ -7357,3 +7357,167 @@ Completed 200 OK in 203ms (Views: 31.2ms | ActiveRecord: 0.0ms)
 [0m
   [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
   [1m[36mSQL (144.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120727163424')[0m
+
+
+Started GET "/es" for 127.0.0.1 at Wed Aug 01 16:42:16 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"es"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 40 LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "carts" ("created_at", "updated_at") VALUES ('2012-08-01 08:42:18.921875', '2012-08-01 08:42:18.921875')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 38)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (156.2ms)
+Completed 200 OK in 453ms (Views: 187.5ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime, "quantity" integer DEFAULT 1, "order_id" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" text, "email" varchar(255), "pay_type" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (109.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "hashed_password" varchar(255), "salt" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (109.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (78.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120727163424')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717110031')
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717143100')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717143840')
+  [1m[36mSQL (78.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120717161719')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120717162913')
+  [1m[36mSQL (62.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120726022224')[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120726022321')
+
+
+Started GET "/" for 127.0.0.1 at Wed Aug 01 16:51:36 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "carts" ("updated_at", "created_at") VALUES ('2012-08-01 08:51:38.515625', '2012-08-01 08:51:38.515625')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 39)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (125.0ms)
+Completed 200 OK in 328ms (Views: 156.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Wed Aug 01 16:51:41 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"es", "authenticity_token"=>"FzPs8z2pX0sA1q1hlrS8IS9qeSaAKbtYpExBWb2Q00I=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://127.0.0.1:3000/es
+Completed 302 Found in 0ms
+
+
+Started GET "/es" for 127.0.0.1 at Wed Aug 01 16:51:41 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"es"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 39 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 39)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (140.6ms)
+Completed 200 OK in 188ms (Views: 156.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/es/line_items?product_id=5" for 127.0.0.1 at Wed Aug 01 16:51:43 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"5", "authenticity_token"=>"FzPs8z2pX0sA1q1hlrS8IS9qeSaAKbtYpExBWb2Q00I=", "locale"=>"es"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 39 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 5 AND ("line_items".cart_id = 39) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "line_items" ("product_id", "updated_at", "cart_id", "order_id", "quantity", "created_at") VALUES (5, '2012-08-01 08:51:43.984375', 39, NULL, 1, '2012-08-01 08:51:43.984375')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 39)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 39)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (15.6ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT SUM("line_items"."quantity") AS sum_id FROM "line_items" WHERE ("line_items".cart_id = 39)[0m
+Rendered line_items/create.js.rjs (31.2ms)
+Completed 200 OK in 250ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/es/line_items?product_id=6" for 127.0.0.1 at Wed Aug 01 16:51:44 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"6", "authenticity_token"=>"FzPs8z2pX0sA1q1hlrS8IS9qeSaAKbtYpExBWb2Q00I=", "locale"=>"es"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 39 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 6 ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 6 AND ("line_items".cart_id = 39) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "line_items" ("product_id", "quantity", "cart_id", "updated_at", "created_at", "order_id") VALUES (6, 1, 39, '2012-08-01 08:51:45.187500', '2012-08-01 08:51:45.187500', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 39)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 39)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 6 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (0.0ms)
+Rendered carts/_cart.html.erb (15.6ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT SUM("line_items"."quantity") AS sum_id FROM "line_items" WHERE ("line_items".cart_id = 39)
+Rendered line_items/create.js.rjs (31.2ms)
+Completed 200 OK in 203ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/es/line_items?product_id=4" for 127.0.0.1 at Wed Aug 01 16:51:46 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"4", "authenticity_token"=>"FzPs8z2pX0sA1q1hlrS8IS9qeSaAKbtYpExBWb2Q00I=", "locale"=>"es"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 39 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 4 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 4 AND ("line_items".cart_id = 39) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "line_items" ("cart_id", "product_id", "order_id", "updated_at", "quantity", "created_at") VALUES (39, 4, NULL, '2012-08-01 08:51:46.703125', 1, '2012-08-01 08:51:46.703125')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 39)[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 39)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 6 ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 4 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (31.2ms)
+  [1m[35mSQL (15.6ms)[0m  SELECT SUM("line_items"."quantity") AS sum_id FROM "line_items" WHERE ("line_items".cart_id = 39)
+Rendered line_items/create.js.rjs (46.9ms)
+Completed 200 OK in 484ms (Views: 78.1ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/es/orders/new" for 127.0.0.1 at Wed Aug 01 16:51:47 +0800 2012
+  Processing by OrdersController#new as HTML
+  Parameters: {"locale"=>"es"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 39 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 39)
+Rendered orders/_form.html.erb (156.2ms)
+Rendered orders/new.html.erb within layouts/application (187.5ms)
+Completed 200 OK in 250ms (Views: 203.1ms | ActiveRecord: 0.0ms)
