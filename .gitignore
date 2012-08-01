@@ -1,7 +1,7 @@
 *~
 *swap
 
-db/development.sqlite3
-db/test.sqlite3
-log/development.log
-log/test.log
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
