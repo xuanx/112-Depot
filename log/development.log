@@ -7695,3 +7695,723 @@ Started GET "/zh" for 127.0.0.1 at Wed Aug 08 11:49:08 +0800 2012
 Rendered carts/_cart.html.erb (0.0ms)
 Rendered store/index.html.erb within layouts/application (62.5ms)
 Completed 200 OK in 203ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cn" for 127.0.0.1 at Wed Aug 08 16:14:07 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"cn"}
+cn translation not available
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "carts" ("updated_at", "created_at") VALUES ('2012-08-08 08:14:09.750000', '2012-08-08 08:14:09.750000')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 41)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (187.5ms)
+Completed 200 OK in 562ms (Views: 203.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Wed Aug 08 16:14:20 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"zh", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://localhost:3000/zh
+Completed 302 Found in 0ms
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 16:14:20 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 41 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 41)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (156.2ms)
+Completed 200 OK in 203ms (Views: 171.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/line_items?product_id=5" for 127.0.0.1 at Wed Aug 08 16:14:28 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"5", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "locale"=>"zh"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 41 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 5 AND ("line_items".cart_id = 41) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "line_items" ("cart_id", "product_id", "quantity", "updated_at", "created_at", "order_id") VALUES (41, 5, 1, '2012-08-08 08:14:29.078125', '2012-08-08 08:14:29.078125', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 41)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 41)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (0.0ms)
+Rendered carts/_cart.html.erb (15.6ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT SUM("line_items"."quantity") AS sum_id FROM "line_items" WHERE ("line_items".cart_id = 41)[0m
+Rendered line_items/create.js.rjs (31.2ms)
+Completed 200 OK in 281ms (Views: 109.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh/orders/new" for 127.0.0.1 at Wed Aug 08 16:14:31 +0800 2012
+  Processing by OrdersController#new as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 41 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 41)[0m
+Rendered orders/_form.html.erb (62.5ms)
+Rendered orders/new.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 156ms (Views: 109.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/orders" for 127.0.0.1 at Wed Aug 08 16:14:33 +0800 2012
+  Processing by OrdersController#create as HTML
+  Parameters: {"commit"=>"提交订单", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "order"=>{"name"=>"", "address"=>"", "pay_type"=>"", "email"=>""}, "locale"=>"zh"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 41 LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 41)[0m
+Rendered orders/_form.html.erb (0.0ms)
+Rendered orders/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 125ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Aug 08 16:14:45 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 41 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 41)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 41)[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 41)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (0.0ms)
+Rendered carts/_cart.html.erb (78.1ms)
+Rendered store/index.html.erb within layouts/application (140.6ms)
+Completed 200 OK in 188ms (Views: 156.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/carts/41" for 127.0.0.1 at Wed Aug 08 16:14:48 +0800 2012
+  Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "id"=>"41", "locale"=>"zh"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/login?locale=zh
+Completed 302 Found in 47ms
+
+
+Started GET "/login?locale=zh" for 127.0.0.1 at Wed Aug 08 16:14:48 +0800 2012
+  Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"zh"}
+Rendered sessions/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?locale=zh" for 127.0.0.1 at Wed Aug 08 16:14:50 +0800 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"name"=>"dave", "commit"=>"Login", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "locale"=>"zh", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'dave' LIMIT 1[0m
+Redirected to http://localhost:3000/admin?locale=zh
+Completed 302 Found in 141ms
+
+
+Started GET "/admin?locale=zh" for 127.0.0.1 at Wed Aug 08 16:14:50 +0800 2012
+  Processing by AdminController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+Rendered admin/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 78ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Aug 08 16:14:54 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 41 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 41)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 41)[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 41)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (31.2ms)
+Rendered store/index.html.erb within layouts/application (203.1ms)
+Completed 200 OK in 250ms (Views: 218.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/carts/41" for 127.0.0.1 at Wed Aug 08 16:14:57 +0800 2012
+  Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "id"=>"41", "locale"=>"zh"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 41 LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 41)
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM "line_items" WHERE "line_items"."id" = 55[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "carts" WHERE "carts"."id" = 41
+Redirected to http://localhost:3000/zh
+Completed 302 Found in 391ms
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 16:14:57 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "carts" ("updated_at", "created_at") VALUES ('2012-08-08 08:14:58.031250', '2012-08-08 08:14:58.031250')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 188ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh" for 127.0.0.1 at Wed Aug 08 16:15:11 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"en", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "locale"=>"zh"}
+Redirected to http://localhost:3000/en
+Completed 302 Found in 0ms
+
+
+Started GET "/en" for 127.0.0.1 at Wed Aug 08 16:15:11 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 109ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Wed Aug 08 16:15:14 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"es", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://localhost:3000/es
+Completed 302 Found in 0ms
+
+
+Started GET "/es" for 127.0.0.1 at Wed Aug 08 16:15:14 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"es"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 109ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/es" for 127.0.0.1 at Wed Aug 08 16:15:15 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"zh", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "locale"=>"es"}
+Redirected to http://localhost:3000/zh
+Completed 302 Found in 0ms
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 16:15:15 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 109ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/line_items?product_id=5" for 127.0.0.1 at Wed Aug 08 16:15:17 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"5", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "locale"=>"zh"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 5 AND ("line_items".cart_id = 42) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "line_items" ("product_id", "updated_at", "order_id", "quantity", "created_at", "cart_id") VALUES (5, '2012-08-08 08:15:17.546875', NULL, 1, '2012-08-08 08:15:17.546875', 42)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 42)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (15.6ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT SUM("line_items"."quantity") AS sum_id FROM "line_items" WHERE ("line_items".cart_id = 42)
+Rendered line_items/create.js.rjs (31.2ms)
+Completed 200 OK in 203ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh/orders/new" for 127.0.0.1 at Wed Aug 08 16:15:19 +0800 2012
+  Processing by OrdersController#new as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)
+Rendered orders/_form.html.erb (140.6ms)
+Rendered orders/new.html.erb within layouts/application (171.9ms)
+Completed 200 OK in 297ms (Views: 203.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/orders" for 127.0.0.1 at Wed Aug 08 16:15:21 +0800 2012
+  Processing by OrdersController#create as HTML
+  Parameters: {"commit"=>"提交订单", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "order"=>{"name"=>"", "address"=>"", "pay_type"=>"", "email"=>""}, "locale"=>"zh"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 42)
+Rendered orders/_form.html.erb (15.6ms)
+Rendered orders/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 359ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/orders" for 127.0.0.1 at Wed Aug 08 16:15:28 +0800 2012
+  Processing by OrdersController#create as HTML
+  Parameters: {"commit"=>"提交订单", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "order"=>{"name"=>"", "address"=>"", "pay_type"=>"", "email"=>""}, "locale"=>"zh"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 42)
+Rendered orders/_form.html.erb (15.6ms)
+Rendered orders/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 156ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh/orders" for 127.0.0.1 at Wed Aug 08 16:18:06 +0800 2012
+  Processing by OrdersController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mOrder Load (0.0ms)[0m  SELECT "orders".* FROM "orders" ORDER BY updated_at DESC LIMIT 2 OFFSET 0
+Rendered orders/index.html.erb within layouts/application (203.1ms)
+Completed 200 OK in 469ms (Views: 234.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh/" for 127.0.0.1 at Wed Aug 08 16:18:14 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 42)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (62.5ms)
+Rendered carts/_cart.html.erb (78.1ms)
+Rendered store/index.html.erb within layouts/application (140.6ms)
+Completed 200 OK in 188ms (Views: 171.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh/orders/new" for 127.0.0.1 at Wed Aug 08 16:18:16 +0800 2012
+  Processing by OrdersController#new as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)
+Rendered orders/_form.html.erb (375.0ms)
+Rendered orders/new.html.erb within layouts/application (390.6ms)
+Completed 200 OK in 500ms (Views: 421.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/orders" for 127.0.0.1 at Wed Aug 08 16:18:17 +0800 2012
+  Processing by OrdersController#create as HTML
+  Parameters: {"commit"=>"提交订单", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "order"=>{"name"=>"", "address"=>"", "pay_type"=>"", "email"=>""}, "locale"=>"zh"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 42)
+Rendered orders/_form.html.erb (78.1ms)
+Rendered orders/new.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 188ms (Views: 109.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh/orders" for 127.0.0.1 at Wed Aug 08 16:18:58 +0800 2012
+  Processing by OrdersController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mOrder Load (0.0ms)[0m  SELECT "orders".* FROM "orders" ORDER BY updated_at DESC LIMIT 2 OFFSET 0
+Rendered orders/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 94ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh/" for 127.0.0.1 at Wed Aug 08 16:19:02 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 42)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (31.2ms)
+Rendered carts/_cart.html.erb (31.2ms)
+Rendered store/index.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 141ms (Views: 109.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh/orders/new" for 127.0.0.1 at Wed Aug 08 16:19:04 +0800 2012
+  Processing by OrdersController#new as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)
+Rendered orders/_form.html.erb (31.2ms)
+Rendered orders/new.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 109ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/orders" for 127.0.0.1 at Wed Aug 08 16:19:05 +0800 2012
+  Processing by OrdersController#create as HTML
+  Parameters: {"commit"=>"提交订单", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "order"=>{"name"=>"", "address"=>"", "pay_type"=>"", "email"=>""}, "locale"=>"zh"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1[0m
+  [1m[35mLineItem Load (15.6ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 42)
+Rendered orders/_form.html.erb (0.0ms)
+Rendered orders/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 125ms (Views: 46.9ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/zh/orders" for 127.0.0.1 at Wed Aug 08 16:19:20 +0800 2012
+  Processing by OrdersController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mOrder Load (0.0ms)[0m  SELECT "orders".* FROM "orders" ORDER BY updated_at DESC LIMIT 2 OFFSET 0
+Rendered orders/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 78ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh/orders" for 127.0.0.1 at Wed Aug 08 16:19:22 +0800 2012
+  Processing by OrdersController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mOrder Load (0.0ms)[0m  SELECT "orders".* FROM "orders" ORDER BY updated_at DESC LIMIT 2 OFFSET 0
+Rendered orders/index.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 141ms (Views: 109.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh/o" for 127.0.0.1 at Wed Aug 08 16:19:25 +0800 2012
+
+ActionController::RoutingError (No route matches "/zh/o"):
+  
+
+Rendered E:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/zh/" for 127.0.0.1 at Wed Aug 08 16:19:27 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 42)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (46.9ms)
+Rendered store/index.html.erb within layouts/application (328.1ms)
+Completed 200 OK in 375ms (Views: 343.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh" for 127.0.0.1 at Wed Aug 08 16:19:31 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"en", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "locale"=>"zh"}
+Redirected to http://localhost:3000/en
+Completed 302 Found in 0ms
+
+
+Started GET "/en" for 127.0.0.1 at Wed Aug 08 16:19:31 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 42)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 42)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (31.2ms)
+Rendered store/index.html.erb within layouts/application (171.9ms)
+Completed 200 OK in 219ms (Views: 187.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en/carts/42" for 127.0.0.1 at Wed Aug 08 16:19:34 +0800 2012
+  Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "id"=>"42", "locale"=>"en"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 42 LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 42)[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "line_items" WHERE "line_items"."id" = 56
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM "carts" WHERE "carts"."id" = 42[0m
+Redirected to http://localhost:3000/en
+Completed 302 Found in 203ms
+
+
+Started GET "/en" for 127.0.0.1 at Wed Aug 08 16:19:34 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "carts" ("updated_at", "created_at") VALUES ('2012-08-08 08:19:34.468750', '2012-08-08 08:19:34.468750')[0m
+  [1m[35mSQL (15.6ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 43)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (109.4ms)
+Completed 200 OK in 219ms (Views: 109.4ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/en/line_items?product_id=5" for 127.0.0.1 at Wed Aug 08 16:19:37 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"5", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "locale"=>"en"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 43 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 5 AND ("line_items".cart_id = 43) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "line_items" ("quantity", "order_id", "product_id", "created_at", "updated_at", "cart_id") VALUES (1, NULL, 5, '2012-08-08 08:19:37.296875', '2012-08-08 08:19:37.296875', 43)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 43)[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 43)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (15.6ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT SUM("line_items"."quantity") AS sum_id FROM "line_items" WHERE ("line_items".cart_id = 43)
+Rendered line_items/create.js.rjs (31.2ms)
+Completed 200 OK in 188ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Wed Aug 08 16:19:49 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"zh", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://localhost:3000/zh
+Completed 302 Found in 0ms
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 16:19:49 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 43 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 43)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 43)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 43)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (46.9ms)
+Rendered store/index.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 203ms (Views: 109.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/carts/43" for 127.0.0.1 at Wed Aug 08 16:19:52 +0800 2012
+  Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "id"=>"43", "locale"=>"zh"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 43 LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 43)[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "line_items" WHERE "line_items"."id" = 57
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM "carts" WHERE "carts"."id" = 43[0m
+Redirected to http://localhost:3000/zh
+Completed 302 Found in 141ms
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 16:19:52 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at") VALUES ('2012-08-08 08:19:52.671875', '2012-08-08 08:19:52.671875')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 44)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (375.0ms)
+Completed 200 OK in 766ms (Views: 421.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh/products" for 127.0.0.1 at Wed Aug 08 16:20:05 +0800 2012
+  Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered products/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 109ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh/products/new" for 127.0.0.1 at Wed Aug 08 16:20:07 +0800 2012
+  Processing by ProductsController#new as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered products/_form.html.erb (31.2ms)
+Rendered products/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 109ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/products" for 127.0.0.1 at Wed Aug 08 16:22:19 +0800 2012
+  Processing by ProductsController#create as HTML
+  Parameters: {"commit"=>"Create Product", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "product"=>{"price"=>"44.2", "title"=>"系统分析与设计", "image_url"=>"/images/system analysis and designjpg.jpg", "description"=>"系统分析与设计方法》(原书第7版)提供了当前市场上可用的、丰富的系统分析和设计的实例。第7版新增内容：\r\n●最新的技术——介绍了当前的流行技术：UML 2.0、VB.NET和C#等。\r\n●面向对象技术——全书中更多地涉及面向对象技术和上下文图。\r\n●可行性研究——更深入地讨论了可行性，包括环境和策略方面的可行性问题。"}, "locale"=>"zh"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "products" WHERE ("products"."title" = '系统分析与设计') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "products" ("description", "title", "created_at", "price", "image_url", "updated_at") VALUES ('系统分析与设计方法》(原书第7版)提供了当前市场上可用的、丰富的系统分析和设计的实例。第7版新增内容：
+●最新的技术——介绍了当前的流行技术：UML 2.0、VB.NET和C#等。
+●面向对象技术——全书中更多地涉及面向对象技术和上下文图。
+●可行性研究——更深入地讨论了可行性，包括环境和策略方面的可行性问题。', '系统分析与设计', '2012-08-08 08:22:19.921875', 44.2, '/images/system analysis and designjpg.jpg', '2012-08-08 08:22:19.921875')
+Redirected to http://localhost:3000/zh/products/7
+Completed 302 Found in 94ms
+
+
+Started GET "/zh/products/7" for 127.0.0.1 at Wed Aug 08 16:22:20 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7", "locale"=>"zh"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 7 ORDER BY title LIMIT 1
+Rendered products/show.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 94ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 16:22:27 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 44 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 44)[0m
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 109ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/logout?locale=zh" for 127.0.0.1 at Wed Aug 08 16:22:35 +0800 2012
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "locale"=>"zh"}
+Redirected to http://localhost:3000/zh
+Completed 302 Found in 0ms
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 16:22:35 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[35mProduct Load (15.6ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 44 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 44)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 125ms (Views: 78.1ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 16:22:38 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 44 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 44)[0m
+Rendered carts/_cart.html.erb (15.6ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 172ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/line_items?product_id=5" for 127.0.0.1 at Wed Aug 08 16:22:49 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"product_id"=>"5", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "locale"=>"zh"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 44 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 5 AND ("line_items".cart_id = 44) LIMIT 1
+  [1m[36mAREL (15.6ms)[0m  [1mINSERT INTO "line_items" ("order_id", "product_id", "cart_id", "updated_at", "quantity", "created_at") VALUES (NULL, 5, 44, '2012-08-08 08:22:49.875000', 1, '2012-08-08 08:22:49.875000')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 44)
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 44)[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (31.3ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT SUM("line_items"."quantity") AS sum_id FROM "line_items" WHERE ("line_items".cart_id = 44)[0m
+Rendered line_items/create.js.rjs (31.3ms)
+Completed 200 OK in 266ms (Views: 62.5ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/zh/orders/new" for 127.0.0.1 at Wed Aug 08 16:22:51 +0800 2012
+  Processing by OrdersController#new as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 44 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 44)[0m
+Rendered orders/_form.html.erb (109.4ms)
+Rendered orders/new.html.erb within layouts/application (125.0ms)
+Completed 200 OK in 188ms (Views: 156.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/orders" for 127.0.0.1 at Wed Aug 08 16:22:53 +0800 2012
+  Processing by OrdersController#create as HTML
+  Parameters: {"commit"=>"提交订单", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "order"=>{"name"=>"", "address"=>"", "pay_type"=>"", "email"=>""}, "locale"=>"zh"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 44 LIMIT 1
+  [1m[36mLineItem Load (0.0ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 44)[0m
+Rendered orders/_form.html.erb (15.6ms)
+Rendered orders/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 109ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 16:23:01 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[35mProduct Load (15.6ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 44 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 44)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 44)[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 44)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (15.6ms)
+Rendered carts/_cart.html.erb (31.2ms)
+Rendered store/index.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 125ms (Views: 109.4ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/zh/carts/44" for 127.0.0.1 at Wed Aug 08 16:23:03 +0800 2012
+  Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "id"=>"44", "locale"=>"zh"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/login?locale=zh
+Completed 302 Found in 16ms
+
+
+Started GET "/login?locale=zh" for 127.0.0.1 at Wed Aug 08 16:23:03 +0800 2012
+  Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"zh"}
+Rendered sessions/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?locale=zh" for 127.0.0.1 at Wed Aug 08 16:23:04 +0800 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"name"=>"dave", "commit"=>"Login", "authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "utf8"=>"✓", "locale"=>"zh", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'dave' LIMIT 1[0m
+Redirected to http://localhost:3000/admin?locale=zh
+Completed 302 Found in 16ms
+
+
+Started GET "/admin?locale=zh" for 127.0.0.1 at Wed Aug 08 16:23:05 +0800 2012
+  Processing by AdminController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+Rendered admin/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 62ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Aug 08 16:23:09 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 44 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 44)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 44)[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 44)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (78.1ms)
+Rendered carts/_cart.html.erb (93.8ms)
+Rendered store/index.html.erb within layouts/application (156.3ms)
+Completed 200 OK in 203ms (Views: 171.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh/carts/44" for 127.0.0.1 at Wed Aug 08 16:23:11 +0800 2012
+  Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "id"=>"44", "locale"=>"zh"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 44 LIMIT 1[0m
+  [1m[35mLineItem Load (0.0ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 44)
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM "line_items" WHERE "line_items"."id" = 58[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "carts" WHERE "carts"."id" = 44
+Redirected to http://localhost:3000/zh
+Completed 302 Found in 281ms
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 16:23:12 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "carts" ("updated_at", "created_at") VALUES ('2012-08-08 08:23:12.375000', '2012-08-08 08:23:12.375000')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 45)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 188ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/logout?locale=zh" for 127.0.0.1 at Wed Aug 08 16:23:15 +0800 2012
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZFiPxW77w9j57wQKIlI+Z0k5xy6i/wdsySyUJyz+DOw=", "locale"=>"zh"}
+Redirected to http://localhost:3000/zh
+Completed 302 Found in 0ms
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 16:23:15 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 45 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 45)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 109ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 16:23:18 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 45 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 45)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 172ms (Views: 78.1ms | ActiveRecord: 0.0ms)

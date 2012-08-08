@@ -14,7 +14,7 @@ zh:
 
   carts:
     cart:
-      title:      "你的购物车"
+      title:      "我的购物车"
       empty:      "清空购物车"
       checkout:   "结账"
   number:
@@ -38,13 +38,13 @@ zh:
   activerecord:
     errors:
       messages:
-        inclusion_html: "抱歉，目录中没有"
+        inclusion: "目录中没有"
         blank:     "不能为空白"
     models:
       order:      "订单"
     attributes:
       order:
-        address_html:  "地址"
+        address:  "地址栏"
         name:     "姓名"
         email:    "E-mail"
         pay_type: "付款方式"
@@ -53,5 +53,5 @@ zh:
       body:       "下面区域填写有错："
       header:
         one:      "由于一个错误您的订单不能被保存"
-        other:    "由于%{count} 个错误您的顶板不能被保存"
+        other:    "由于%{count} 个错误您的订单不能被保存"
   thanks:         "感谢您的购买"

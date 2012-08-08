@@ -37,7 +37,7 @@ es:
   activerecord:
     errors:
       messages:
-        inclusion_html: "no est&aacute; incluido en la lista"
+        inclusion: "no est&aacute; incluido en la lista"
         blank:     "no puede quedar en blanco"
     models:
       order:      "pedido"
