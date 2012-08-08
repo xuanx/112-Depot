@@ -7521,3 +7521,177 @@ Started GET "/es/orders/new" for 127.0.0.1 at Wed Aug 01 16:51:47 +0800 2012
 Rendered orders/_form.html.erb (156.2ms)
 Rendered orders/new.html.erb within layouts/application (187.5ms)
 Completed 200 OK in 250ms (Views: 203.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 11:47:51 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mProduct Load (15.6ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 56 LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "carts" ("updated_at", "created_at") VALUES ('2012-08-08 03:47:54.328125', '2012-08-08 03:47:54.328125')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 40)[0m
+Rendered carts/_cart.html.erb (62.5ms)
+Rendered store/index.html.erb within layouts/application (203.1ms)
+Completed 200 OK in 469ms (Views: 218.8ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 11:47:58 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 40 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 40)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (109.4ms)
+Completed 200 OK in 156ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh" for 127.0.0.1 at Wed Aug 08 11:48:00 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"en", "authenticity_token"=>"1/YBvvF6MmT2LkYjpZxmiTkuxHW+c4/+jed1MWqcm84=", "utf8"=>"✓", "locale"=>"zh"}
+Redirected to http://127.0.0.1:3000/en
+Completed 302 Found in 16ms
+
+
+Started GET "/en" for 127.0.0.1 at Wed Aug 08 11:48:00 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 40 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 40)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (109.4ms)
+Completed 200 OK in 156ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Wed Aug 08 11:48:02 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"es", "authenticity_token"=>"1/YBvvF6MmT2LkYjpZxmiTkuxHW+c4/+jed1MWqcm84=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://127.0.0.1:3000/es
+Completed 302 Found in 0ms
+
+
+Started GET "/es" for 127.0.0.1 at Wed Aug 08 11:48:02 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"es"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 40 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 40)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (109.4ms)
+Completed 200 OK in 156ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/es" for 127.0.0.1 at Wed Aug 08 11:48:05 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"zh", "authenticity_token"=>"1/YBvvF6MmT2LkYjpZxmiTkuxHW+c4/+jed1MWqcm84=", "utf8"=>"✓", "locale"=>"es"}
+Redirected to http://127.0.0.1:3000/zh
+Completed 302 Found in 0ms
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 11:48:05 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 40 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 40)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (109.4ms)
+Completed 200 OK in 156ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Aug 08 11:48:13 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 40 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 40)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (109.4ms)
+Completed 200 OK in 156ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Aug 08 11:48:53 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 40 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 40)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 94ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Aug 08 11:48:58 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 40 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 40)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 109ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Aug 08 11:49:01 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 40 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 40)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 109ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/zh" for 127.0.0.1 at Wed Aug 08 11:49:04 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"en", "authenticity_token"=>"1/YBvvF6MmT2LkYjpZxmiTkuxHW+c4/+jed1MWqcm84=", "utf8"=>"✓", "locale"=>"zh"}
+Redirected to http://127.0.0.1:3000/en
+Completed 302 Found in 0ms
+
+
+Started GET "/en" for 127.0.0.1 at Wed Aug 08 11:49:04 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 40 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 40)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 109ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Wed Aug 08 11:49:06 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"es", "authenticity_token"=>"1/YBvvF6MmT2LkYjpZxmiTkuxHW+c4/+jed1MWqcm84=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://127.0.0.1:3000/es
+Completed 302 Found in 0ms
+
+
+Started GET "/es" for 127.0.0.1 at Wed Aug 08 11:49:06 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"es"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 40 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 40)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 188ms (Views: 93.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/es" for 127.0.0.1 at Wed Aug 08 11:49:08 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"zh", "authenticity_token"=>"1/YBvvF6MmT2LkYjpZxmiTkuxHW+c4/+jed1MWqcm84=", "utf8"=>"✓", "locale"=>"es"}
+Redirected to http://127.0.0.1:3000/zh
+Completed 302 Found in 0ms
+
+
+Started GET "/zh" for 127.0.0.1 at Wed Aug 08 11:49:08 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 40 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 40)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 203ms (Views: 78.1ms | ActiveRecord: 0.0ms)

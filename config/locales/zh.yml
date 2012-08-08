@@ -1,0 +1,57 @@
+#encoding: utf-8
+zh:
+  layouts:
+    application:
+      title:     "求实书城"
+      home:      "主页"
+      questions: "提问"
+      news:     "新闻"
+      contact:   "联系客服"
+  store:
+    index:
+      title_html:  "求实书城产品目录"
+      add_html:    "加入购物车"
+
+  carts:
+    cart:
+      title:      "你的购物车"
+      empty:      "清空购物车"
+      checkout:   "结账"
+  number:
+    currency:
+      format:
+        unit:      "￥"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format:    "%u%n"
+  orders:
+    new:
+     legend:     "请输入您的详细信息"
+    form:
+      name:      "姓名"
+      address_html:   "地址"
+      email:     "E-mail"
+      pay_type_html:  "付款方式"
+      pay_prompt_html:   "请选择一种付款方式"
+      submit:    "提交订单"
+  activerecord:
+    errors:
+      messages:
+        inclusion_html: "抱歉，目录中没有"
+        blank:     "不能为空白"
+    models:
+      order:      "订单"
+    attributes:
+      order:
+        address_html:  "地址"
+        name:     "姓名"
+        email:    "E-mail"
+        pay_type: "付款方式"
+  errors:
+    template:
+      body:       "下面区域填写有错："
+      header:
+        one:      "由于一个错误您的订单不能被保存"
+        other:    "由于%{count} 个错误您的顶板不能被保存"
+  thanks:         "感谢您的购买"
