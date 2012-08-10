@@ -6,6 +6,11 @@ es:
       questions: "Preguntas"
       news:     "Noticias"
       contact:   "Contacto"
+      Orders:    "Orders"
+      Products:  "Products"
+      Users:     "Users"
+      Catalogs:  "Catalogs"
+      Logout:    "Logout"
   store:
     index:
       title_html:  "Su Cat&aacute;logo de Pragmatic"
@@ -16,6 +21,7 @@ es:
       title:      "Carrito de la Compra"
       empty:      "Vaciar Carrito"
       checkout:   "Comprar"
+      Are you sure?: "Are you sure?"
   number:
     currency:
       format:

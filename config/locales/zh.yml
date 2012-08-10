@@ -7,6 +7,11 @@ zh:
       questions: "提问"
       news:     "新闻"
       contact:   "联系客服"
+      Orders:    "订单查询"
+      Products:  "商品查询"
+      Users:     "用户管理"
+      Catalogs:  "商品分类"
+      Logout:    "退出登录"
   store:
     index:
       title_html:  "求实书城产品目录"
@@ -17,6 +22,7 @@ zh:
       title:      "我的购物车"
       empty:      "清空购物车"
       checkout:   "结账"
+      Are you sure?:  "确定清空购物车?"
   number:
     currency:
       format:

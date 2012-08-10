@@ -36,12 +36,12 @@
 
       <% if session[:user_id] %>
         <br />
-        <%= link_to 'Orders', orders_path %><br />
-        <%= link_to 'Products', products_path %><br />
-        <%= link_to 'Users', users_path %><br />
-        <%= link_to 'Catalogs', catalogs_path %><br />
+        <%= link_to t('.Orders'), orders_path %><br />
+        <%= link_to t('.Products'), products_path %><br />
+        <%= link_to t('.Users'), users_path %><br />
+        <%= link_to t('.Catalogs'), catalogs_path %><br />
         <br />
-        <%= button_to 'Logout', logout_path, :method => :delete %>
+        <%= button_to t('.Logout'), logout_path, :method => :delete %>
       <% end %>
     </div>
 
