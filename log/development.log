@@ -8415,3 +8415,1433 @@ Started GET "/zh" for 127.0.0.1 at Wed Aug 08 16:23:18 +0800 2012
 Rendered carts/_cart.html.erb (0.0ms)
 Rendered store/index.html.erb within layouts/application (62.5ms)
 Completed 200 OK in 172ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Aug 10 09:57:15 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at") VALUES ('2012-08-10 01:57:16.339272', '2012-08-10 01:57:16.339272')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 46)
+Rendered carts/_cart.html.erb (0.4ms)
+Rendered store/index.html.erb within layouts/application (100.7ms)
+Completed 200 OK in 466ms (Views: 108.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Aug 10 09:57:17 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 46 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 46)[0m
+Rendered carts/_cart.html.erb (0.4ms)
+Rendered store/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 63ms (Views: 52.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at Fri Aug 10 09:57:48 +0800 2012
+  Processing by ProductsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/login?locale=en
+Completed 302 Found in 47ms
+
+
+Started GET "/login?locale=en" for 127.0.0.1 at Fri Aug 10 09:57:48 +0800 2012
+  Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+Rendered sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at Fri Aug 10 09:57:57 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/login?locale=en
+Completed 302 Found in 6ms
+
+
+Started GET "/login?locale=en" for 127.0.0.1 at Fri Aug 10 09:57:57 +0800 2012
+  Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+Rendered sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login?locale=en" for 127.0.0.1 at Fri Aug 10 09:58:09 +0800 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"password"=>"[FILTERED]", "locale"=>"en", "commit"=>"Login", "utf8"=>"✓", "name"=>"dave", "authenticity_token"=>"e1zvdEg1lHkTdztCFpHH3J88nxSby4Zd81vKj/Y5O/A="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'dave' LIMIT 1
+Redirected to http://localhost:3000/login?locale=en
+Completed 302 Found in 14ms
+
+
+Started GET "/login?locale=en" for 127.0.0.1 at Fri Aug 10 09:58:09 +0800 2012
+  Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+Rendered sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login?locale=en" for 127.0.0.1 at Fri Aug 10 09:58:17 +0800 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"password"=>"[FILTERED]", "locale"=>"en", "commit"=>"Login", "utf8"=>"✓", "name"=>"dave", "authenticity_token"=>"e1zvdEg1lHkTdztCFpHH3J88nxSby4Zd81vKj/Y5O/A="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'dave' LIMIT 1[0m
+Redirected to http://localhost:3000/admin?locale=en
+Completed 302 Found in 9ms
+
+
+Started GET "/admin?locale=en" for 127.0.0.1 at Fri Aug 10 09:58:17 +0800 2012
+  Processing by AdminController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+Rendered admin/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 17ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/orders" for 127.0.0.1 at Fri Aug 10 09:58:19 +0800 2012
+  Processing by OrdersController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" ORDER BY updated_at DESC LIMIT 2 OFFSET 0[0m
+Rendered orders/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 54ms (Views: 13.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products" for 127.0.0.1 at Fri Aug 10 09:58:21 +0800 2012
+  Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered products/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 28ms (Views: 16.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products/5" for 127.0.0.1 at Fri Aug 10 09:58:24 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5", "locale"=>"en"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+Rendered products/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 24ms (Views: 11.2ms | ActiveRecord: 0.3ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateProducts (20120717110031)
+Migrating to CreateCarts (20120717143100)
+Migrating to CreateLineItems (20120717143840)
+Migrating to AddQuantityToLineItem (20120717161719)
+Migrating to CombineItemsInCart (20120717162913)
+Migrating to CreateOrders (20120726022224)
+Migrating to AddOrderIdToLineItem (20120726022321)
+Migrating to CreateUsers (20120727163424)
+Migrating to CreateComments (20120810015914)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120810015914')
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("carts")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("comments")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("line_items")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("orders")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("products")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+
+
+Started GET "/en/products/5/comments" for 127.0.0.1 at Fri Aug 10 10:08:33 +0800 2012
+  Processing by CommentsController#index as HTML
+  Parameters: {"product_id"=>"5", "locale"=>"en"}
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"[0m
+Rendered comments/index.html.erb within layouts/application (6.7ms)
+Completed   in 28ms
+
+ActionView::Template::Error (undefined local variable or method `new_comment_path' for #<#<Class:0xb657c068>:0xb657b190>):
+    22: 
+    23: <br />
+    24: 
+    25: <%= link_to 'New Comment', new_comment_path %>
+  app/views/comments/index.html.erb:25:in `_app_views_comments_index_html_erb___783212278__617885248_0'
+  app/controllers/comments_controller.rb:7:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.9ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:14:35 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+Rendered products/show.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 34ms (Views: 17.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:17:38 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 30ms (Views: 16.3ms | ActiveRecord: 0.4ms)
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProduct Load (0.7ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.7ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.6ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 1
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:21:27 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 30ms (Views: 15.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:26:17 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 33ms (Views: 16.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:26:18 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 34ms (Views: 18.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:26:19 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 69ms (Views: 18.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:26:19 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (52.9ms)
+Completed 200 OK in 69ms (Views: 55.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:26:20 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (48.3ms)
+Completed 200 OK in 65ms (Views: 50.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:26:21 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 32ms (Views: 16.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:26:21 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 31ms (Views: 16.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:26:22 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 33ms (Views: 18.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:28:25 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 32ms (Views: 16.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:28:25 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 65ms (Views: 17.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:28:26 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 65ms (Views: 18.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:28:26 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 67ms (Views: 51.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:28:26 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (48.2ms)
+Completed 200 OK in 64ms (Views: 50.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:28:27 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 32ms (Views: 17.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:28:27 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 33ms (Views: 17.3ms | ActiveRecord: 0.5ms)
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.8ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.9ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "comments" ("product_id", "content", "updated_at", "created_at") VALUES (5, 'halo world', '2012-08-10 02:29:50.031158', '2012-08-10 02:29:50.031158')[0m
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:29:55 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (20.8ms)
+Completed   in 75ms
+
+ActionView::Template::Error (undefined local variable or method `moments_ago_in_words' for #<#<Class:0xb677b404>:0xb6777f48>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: 	<p>commented <%= moments_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__616843498_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__616843498_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (42.2ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:30:35 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (47.1ms)
+Completed   in 69ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb663dc2c>:0xb663cd54>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: 	<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617488958_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617488958_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.2ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:30:36 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (55.5ms)
+Completed   in 77ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb6549b04>:0xb6548c2c>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: 	<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617988378_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617988378_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (31.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (40.7ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:01 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (18.6ms)
+Completed   in 66ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb668a108>:0xb66891e0>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: #<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617332318_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617332318_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.8ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:02 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (54.0ms)
+Completed   in 75ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb6567424>:0xb65664e8>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: #<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617928068_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617928068_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.9ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:02 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (19.0ms)
+Completed   in 42ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb66f6588>:0xb66f56b0>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: #<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617110488_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617110488_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.0ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:03 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (54.6ms)
+Completed   in 77ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb6598ca4>:0xb6596fe4>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: #<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617829068_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617829068_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.2ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:03 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (20.7ms)
+Completed   in 73ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb6764ca4>:0xb6763688>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: #<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__616886208_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__616886208_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.6ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:03 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (48.0ms)
+Completed   in 71ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb66451e8>:0xb6643d98>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: #<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617474768_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617474768_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.3ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:03 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (55.0ms)
+Completed   in 75ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb6543bb4>:0xb6542cdc>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: #<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__618000578_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__618000578_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (31.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (40.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:03 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (18.5ms)
+Completed   in 68ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb66792e0>:0xb66758c0>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: #<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617373598_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617373598_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.7ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:04 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (55.3ms)
+Completed   in 77ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb6564b70>:0xb6563b08>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: #<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617933408_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617933408_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.2ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:04 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (20.1ms)
+Completed   in 43ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb66eef54>:0xb66ee054>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: #<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617125638_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617125638_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:04 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (53.9ms)
+Completed   in 77ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb6598790>:0xb6596a80>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: #<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617831348_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617831348_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.9ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:04 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (21.9ms)
+Completed   in 75ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb675f9fc>:0xb675e96c>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: #<p>commented <%= moment_ago_in_words %>:</p>
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__616895108_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__616895108_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (43.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:14 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (47.3ms)
+Completed   in 76ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb6642cb8>:0xb66415c0>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: <!-- <p>commented <%= moment_ago_in_words %>:</p>-->
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617479298_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617479298_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:15 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (55.0ms)
+Completed   in 76ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb6542d54>:0xb6541e7c>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: <!-- <p>commented <%= moment_ago_in_words %>:</p>-->
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__618002418_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__618002418_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (33.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (41.9ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:19 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (23.5ms)
+Completed   in 76ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb66745ec>:0xb66736c4>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: <!-- <p>commented <%= moment_ago_in_words %>:</p>-->
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617376748_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617376748_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.1ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:20 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (58.2ms)
+Completed   in 79ms
+
+ActionView::Template::Error (undefined local variable or method `moment_ago_in_words' for #<#<Class:0xb65647ec>:0xb6563770>):
+    23: 
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: <!-- <p>commented <%= moment_ago_in_words %>:</p>-->
+    27: 	<%= comment.content %>
+    28: <% end %>
+    29: 
+  app/views/products/show.html.erb:26:in `_app_views_products_show_html_erb___667628336__617933888_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617933888_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.3ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:33 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 41ms (Views: 22.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:32:48 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 39ms (Views: 22.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products/5/edit" for 127.0.0.1 at Fri Aug 10 10:32:55 +0800 2012
+  Processing by ProductsController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+Rendered products/_form.html.erb (9.2ms)
+Rendered products/edit.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 32ms (Views: 17.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:34:47 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (15.8ms)
+Completed   in 62ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    25: <% @product.comments.each do |comment| %>
+    26: 	<%= comment.content %>
+    27: <% end %>
+    28: <%= form_for(@comment) do |f| %>
+    29:   <% if @comment.errors.any? %>
+    30:     <div id="error_explanation">
+    31:       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+  app/views/products/show.html.erb:28:in `_app_views_products_show_html_erb___667628336__616857678_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.7ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:35:14 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 68ms (Views: 23.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:38:03 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (14.1ms)
+Completed   in 66ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    25: <% @product.comments.each do |comment| %>
+    26: 	<%= comment.content %>
+    27: 
+    28: <%= form_for(@comment) do |f| %>
+    29: 
+    30:     <%= f.label :product_id %><br />
+    31:     <%= f.text_field :product_id %>
+  app/views/products/show.html.erb:28:in `_app_views_products_show_html_erb___667628336__617008268_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617008268_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.6ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:38:04 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (16.3ms)
+Completed   in 71ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    25: <% @product.comments.each do |comment| %>
+    26: 	<%= comment.content %>
+    27: 
+    28: <%= form_for(@comment) do |f| %>
+    29: 
+    30:     <%= f.label :product_id %><br />
+    31:     <%= f.text_field :product_id %>
+  app/views/products/show.html.erb:28:in `_app_views_products_show_html_erb___667628336__616940308_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__616940308_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.4ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:38:04 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (15.6ms)
+Completed   in 68ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    25: <% @product.comments.each do |comment| %>
+    26: 	<%= comment.content %>
+    27: 
+    28: <%= form_for(@comment) do |f| %>
+    29: 
+    30:     <%= f.label :product_id %><br />
+    31:     <%= f.text_field :product_id %>
+  app/views/products/show.html.erb:28:in `_app_views_products_show_html_erb___667628336__616905078_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__616905078_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.7ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:38:04 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (16.8ms)
+Completed   in 69ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    25: <% @product.comments.each do |comment| %>
+    26: 	<%= comment.content %>
+    27: 
+    28: <%= form_for(@comment) do |f| %>
+    29: 
+    30:     <%= f.label :product_id %><br />
+    31:     <%= f.text_field :product_id %>
+  app/views/products/show.html.erb:28:in `_app_views_products_show_html_erb___667628336__616856868_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__616856868_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.1ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:38:05 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (15.8ms)
+Completed   in 63ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    25: <% @product.comments.each do |comment| %>
+    26: 	<%= comment.content %>
+    27: 
+    28: <%= form_for(@comment) do |f| %>
+    29: 
+    30:     <%= f.label :product_id %><br />
+    31:     <%= f.text_field :product_id %>
+  app/views/products/show.html.erb:28:in `_app_views_products_show_html_erb___667628336__616801328_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__616801328_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.3ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:38:59 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (66.8ms)
+Completed   in 91ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    27: 
+    28: <% end %>
+    29: 
+    30: <%= form_for(@comment) do |f| %>
+    31: 
+    32:     <%= f.label :product_id %><br />
+    33:     <%= f.text_field :product_id %>
+  app/views/products/show.html.erb:30:in `_app_views_products_show_html_erb___667628336__618110438_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:39:00 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (51.1ms)
+Completed   in 69ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    27: 
+    28: <% end %>
+    29: 
+    30: <%= form_for(@comment) do |f| %>
+    31: 
+    32:     <%= f.label :product_id %><br />
+    33:     <%= f.text_field :product_id %>
+  app/views/products/show.html.erb:30:in `_app_views_products_show_html_erb___667628336__617996818_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.8ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:39:01 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (53.5ms)
+Completed   in 71ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    27: 
+    28: <% end %>
+    29: 
+    30: <%= form_for(@comment) do |f| %>
+    31: 
+    32:     <%= f.label :product_id %><br />
+    33:     <%= f.text_field :product_id %>
+  app/views/products/show.html.erb:30:in `_app_views_products_show_html_erb___667628336__617983408_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:39:57 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (51.0ms)
+Completed   in 69ms
+
+ActionView::Template::Error (undefined method `comment' for #<Product:0xb654c750>):
+    28: <% end %>
+    29: 
+    30: 
+    31: <%= form_for(@product.comment) do |f| %>
+    32: 
+    33:     <%= f.label :product_id %><br />
+    34:     <%= f.text_field :product_id %>
+  app/views/products/show.html.erb:31:in `_app_views_products_show_html_erb___667628336__617990188_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.7ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:39:58 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (53.3ms)
+Completed   in 70ms
+
+ActionView::Template::Error (undefined method `comment' for #<Product:0xb6553104>):
+    28: <% end %>
+    29: 
+    30: 
+    31: <%= form_for(@product.comment) do |f| %>
+    32: 
+    33:     <%= f.label :product_id %><br />
+    34:     <%= f.text_field :product_id %>
+  app/views/products/show.html.erb:31:in `_app_views_products_show_html_erb___667628336__617975088_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:40:42 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (59.9ms)
+Completed   in 83ms
+
+ActionView::Template::Error (undefined local variable or method `product' for #<#<Class:0xb65539b0>:0xb6552448>):
+    28: <% end %>
+    29: 
+    30: 
+    31: <%= form_for(product) do |f| %>
+    32: 
+    33:     <%= f.label :product_id %><br />
+    34:     <%= f.text_field :product_id %>
+  app/views/products/show.html.erb:31:in `_app_views_products_show_html_erb___667628336__617969798_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.0ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:40:52 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (17.3ms)
+Completed   in 35ms
+
+ActionView::Template::Error (undefined method `product_id' for #<Product:0xb66aabb0>):
+    31: <%= form_for(@product) do |f| %>
+    32: 
+    33:     <%= f.label :product_id %><br />
+    34:     <%= f.text_field :product_id %>
+    35: 
+    36:     <%= f.label :content %><br />
+    37:     <%= f.text_area :content %>
+  app/views/products/show.html.erb:34:in `_app_views_products_show_html_erb___667628336__617272888_0'
+  app/views/products/show.html.erb:31:in `_app_views_products_show_html_erb___667628336__617272888_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.2ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:46:33 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (13.5ms)
+Completed   in 32ms
+
+ActionView::Template::Error (wrong number of arguments (0 for 1)):
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: 	<p>
+    27:     Commented <%= time_ago_in_words%>
+    28:   </p>
+    29:   <%= comment.content %>
+    30: 
+  app/views/products/show.html.erb:27:in `time_ago_in_words'
+  app/views/products/show.html.erb:27:in `_app_views_products_show_html_erb___667628336__617247128_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617247128_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.3ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:47:21 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (14.8ms)
+Completed   in 33ms
+
+ActionView::Template::Error (undefined method `create_at' for #<Comment:0xb66688c8>):
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: 	<p>
+    27:     Commented <%= time_ago_in_words(comment.create_at)%>
+    28:   </p>
+    29:   <%= comment.content %>
+    30: 
+  app/views/products/show.html.erb:27:in `_app_views_products_show_html_erb___667628336__617205198_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617205198_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.2ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:47:22 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (16.0ms)
+Completed   in 34ms
+
+ActionView::Template::Error (undefined method `create_at' for #<Comment:0xb6694fcc>):
+    24: <h3>Comments:</h3>
+    25: <% @product.comments.each do |comment| %>
+    26: 	<p>
+    27:     Commented <%= time_ago_in_words(comment.create_at)%>
+    28:   </p>
+    29:   <%= comment.content %>
+    30: 
+  app/views/products/show.html.erb:27:in `_app_views_products_show_html_erb___667628336__617106468_0'
+  app/views/products/show.html.erb:25:in `_app_views_products_show_html_erb___667628336__617106468_0'
+  app/controllers/products_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.2ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:47:32 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 70ms (Views: 21.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:47:51 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 35ms (Views: 20.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:48:00 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 36ms (Views: 20.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:48:25 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)
+Rendered products/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 37ms (Views: 21.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/en/products/5/" for 127.0.0.1 at Fri Aug 10 10:53:32 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 63ms (Views: 48.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/en/products/5/comments" for 127.0.0.1 at Fri Aug 10 10:54:12 +0800 2012
+  Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "comment"=>{"content"=>"好棒啊这本书"}, "product_id"=>"5", "locale"=>"en", "commit"=>"Add comment", "authenticity_token"=>"e1zvdEg1lHkTdztCFpHH3J88nxSby4Zd81vKj/Y5O/A="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "comments" ("created_at", "updated_at", "content", "product_id") VALUES ('2012-08-10 02:54:12.762411', '2012-08-10 02:54:12.762411', '好棒啊这本书', 5)
+Redirected to http://localhost:3000/en/products/5
+Completed 302 Found in 260ms
+
+
+Started GET "/en/products/5" for 127.0.0.1 at Fri Aug 10 10:54:13 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 81ms (Views: 25.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/en/products" for 127.0.0.1 at Fri Aug 10 10:55:42 +0800 2012
+  Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered products/index.html.erb within layouts/application (50.9ms)
+Completed 200 OK in 67ms (Views: 53.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Aug 10 10:55:52 +0800 2012
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 46 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 46)
+Rendered carts/_cart.html.erb (0.4ms)
+Rendered store/index.html.erb within layouts/application (60.2ms)
+Completed 200 OK in 76ms (Views: 62.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/en/products" for 127.0.0.1 at Fri Aug 10 10:56:02 +0800 2012
+  Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered products/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 31ms (Views: 17.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/en/products/5" for 127.0.0.1 at Fri Aug 10 10:56:04 +0800 2012
+  Processing by ProductsController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".product_id = 5)[0m
+Rendered products/show.html.erb within layouts/application (58.3ms)
+Completed 200 OK in 74ms (Views: 60.4ms | ActiveRecord: 0.5ms)

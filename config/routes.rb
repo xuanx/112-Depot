@@ -1,4 +1,6 @@
 Depot::Application.routes.draw do
+
+
   #get "admin/index"
   get 'admin' => 'admin#index'
 
@@ -23,6 +25,7 @@ Depot::Application.routes.draw do
     resources :carts
     resources :products do
       get :who_bought, :on => :member
+      resources :comments
     end
 
     root :to => 'store#index', :as => 'store'
