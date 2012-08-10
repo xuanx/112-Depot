@@ -25,6 +25,7 @@
   padding-right: 2em;
   background: white;
   width: 64%;
+  min-height:500px;
 }
 #side_right {
   padding: 1em;
@@ -38,6 +39,8 @@
 
 #space {
   clear: both;
+  height: 20px;
+  width: 100%;
 }
 #side {
   float: left;
