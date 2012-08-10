@@ -7,14 +7,11 @@
 </h1>
 
 <p>
-  <b>Description:</b>
-  <%= @product.description %>
+  <b>Product details:</b>
+  <%=sanitize @product.description %><br />
+    <%= image_tag(@product.image_url) %>
 </p>
 
-<p>
-  <b>Image url:</b>
-  <%= @product.image_url %>
-</p>
 
 <p>
   <b>Price:</b>
