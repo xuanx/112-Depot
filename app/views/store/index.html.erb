@@ -10,8 +10,8 @@
   <% end %>
 
   <% @products.each do |product| %>
-    <%= image_tag(product.image_url) %>
-    <h3><%= product.title %></h3>
+    <%= link_to image_tag(product.image_url),{:controller => "products",:action => "show", :id => product } %>
+    <h3><%= link_to product.title, { :controller => "products",:action => "show", :id => product } %></h3>
     <%=sanitize product.description %>
 
     <div class="price_line">
