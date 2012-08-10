@@ -1,0 +1,24 @@
+<h1>Listing catalogs</h1>
+
+<table>
+
+  <% while !@catalogs.empty? %>
+    <tr>
+      <% catalog = @catalogs.shift %>
+      <% @catalogs = catalog.children + @catalogs %>
+      <% catalog.depth.times do %>
+        <td></td>
+      <% end %>
+
+      <td><%= catalog.name %></td>
+      <td><%= link_to 'Show', catalog %></td>
+      <td><%= link_to 'Edit', edit_catalog_path(catalog) %></td>
+      <td><%= link_to("New Child",{:controller=>"catalogs",:action=>"new",:pid=>catalog.name }) %></td>
+    </tr>
+
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Catalog', {:controller=>"catalogs",:action=>"new",:pid=>"root" } %>

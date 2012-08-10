@@ -19,20 +19,33 @@
 }
 
 #main {
-  margin-left: 13em;
+  float: left;
   padding-top: 4ex;
   padding-left: 2em;
+  padding-right: 2em;
   background: white;
+  width: 64%;
+}
+#side_right {
+  padding: 1em;
+  width: 15%;
+  float: right;
+
+  color: white;
+  font-size: small;
+
 }
 
+#space {
+  clear: both;
+}
 #side {
   float: left;
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-bottom: 1em;
-  width: 12em;
-  background: #141;
+  padding: 1em;
+  width: 12%;
 }
+
+
 #side a {
   color: #bfb;
   font-size: small;

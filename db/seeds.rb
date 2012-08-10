@@ -1,5 +1,10 @@
 # encoding: utf-8
 Product.delete_all
+Cart.delete_all
+Order.delete_all
+LineItem.delete_all
+Catalog.delete_all
+
 Product.create(:title => 'Web Design for Developers',
   :description => 
     %{<p>
@@ -12,7 +17,8 @@ Product.create(:title => 'Web Design for Developers',
         all the way to implementation.
       </p>},
   :image_url =>   '/images/wd4d.jpg',    
-  :price => 42.95)
+  :price => 42.95,
+  :catalog => "C++")
 # . . .
 Product.create(:title => 'Programming Ruby 1.9',
   :description =>
@@ -22,7 +28,8 @@ Product.create(:title => 'Programming Ruby 1.9',
         you should add Ruby to your toolbox.
       </p>},
   :image_url => '/images/ruby.jpg',
-  :price => 49.50)
+  :price => 49.50,
+  :catalog => "C++")
 # . . .
 
 Product.create(:title => 'Rails Test Prescriptions',
@@ -36,6 +43,24 @@ Product.create(:title => 'Rails Test Prescriptions',
         including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
       </p>},
   :image_url => '/images/rtp.jpg',
-  :price => 43.75)
+  :price => 43.75,
+  :catalog => "C++")
 
- User.create(:name => 'dave', :password => 'secret', :password_confirmation => 'secret')
+User.create(:name => 'dave', :password => 'secret', :password_confirmation => 'secret')
+
+
+Catalog.create(:name => "Programming", :pid => "root")
+Catalog.create(:name => "Mathematics", :pid => "root")
+
+Catalog.create(:name => "C++",         :pid => "Programming")
+Catalog.create(:name => "C",           :pid => "Programming")
+
+Catalog.create(:name => "Linear Algebra",       :pid => "Mathematics")
+Catalog.create(:name => "Discrete Mathematics", :pid => "Mathematics")
+
+Catalog.create(:name => "API",         :pid => "C++")
+Catalog.create(:name => "OOAD",        :pid => "C++")
+
+Catalog.create(:name => "Matrix",       :pid => "Linear Algebra")
+Catalog.create(:name => "Vector",       :pid => "Linear Algebra")
+

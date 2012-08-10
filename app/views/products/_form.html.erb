@@ -27,7 +27,101 @@
     <%= f.label :price %><br />
     <%= f.text_field :price %>
   </div>
+
+  <div class="field">
+    <%= f.label :catalog %><br />
+    <%= f.text_field :catalog, :id => "hide_catalog", :readonly => true %>
+  </div>
+
+
+  <% if @catalogs %>
+    <div class="field">
+      <div id="selectField">
+        <select onchange="setSelection(this)">
+          <option value="">Select A Catalog</option>
+          <% @catalogs.each do |catalog| %>
+            <option value="<%= catalog.name %>"><%= catalog.name%></option>
+          <% end %>
+        </select>
+
+      </div>
+
+      <ul id="catalog_tree" style="display: none">
+        <% while !@catalogs.empty? %>
+          <% catalog = @catalogs.shift %>
+          <% @catalogs = catalog.children + @catalogs %>
+          <li class="<%= catalog.pid %>"><%= catalog.name %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+<script>
+
+  function getChildByTagName(parent, tag) {
+
+    var children = parent.childNodes;
+    var children2 = new Array();
+    var index = 0;
+
+    for (var i = 0; i < children.length; ++i) {
+      if (children[i].nodeName.toLowerCase() == tag.toLowerCase()) {
+        children2[index] = children[i];
+        ++index;
+      }
+    }
+
+    return children2;
+  }
+
+function filterBy(items, name) {
+
+  var newItems = new Array();
+  var index = 0;
+  for (var i = 0; i < newItems.length; ++i)
+    if (items[i].className == name) {
+      newItems[index] = items[i];
+      ++index;
+    }
+
+}
+
+function setSelection(elem) {
+
+  document.getElementById("hide_catalog").value = elem.value;
+
+  var parent = document.getElementById("selectField");
+
+  while (elem.nextSibling != null)
+    parent.removeChild(elem.nextSibling);
+
+  var children = document.getElementsByClassName(elem.value);
+  if (children.length > 0) {
+    var select =document.createElement("select");
+
+    var option = document.createElement("option");
+    option.value = "";
+    option.innerHTML = "Select A Catalog";
+    select.appendChild(option);
+
+    for (var i = 0; i < children.length; ++i) {
+      var option = document.createElement("option");
+      option.value = children[i].innerHTML;
+      option.innerHTML = children[i].innerHTML;
+      select.appendChild(option);
+    }
+
+    select.setAttribute("onchange", "setSelection(this)");
+    parent.appendChild(select);
+  }
+
+}
+</script>
+

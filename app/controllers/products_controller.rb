@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
   # GET /products/new.xml
   def new
     @product = Product.new
+    @catalogs = Catalog.find_all_by_pid("root")
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,12 +36,14 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    @catalogs = Catalog.find_all_by_pid("root")
   end
 
   # POST /products
   # POST /products.xml
   def create
     @product = Product.new(params[:product])
+    @catalogs = Catalog.find_all_by_pid("root")
 
     respond_to do |format|
       if @product.save
@@ -57,6 +60,7 @@ class ProductsController < ApplicationController
   # PUT /products/1.xml
   def update
     @product = Product.find(params[:id])
+    @catalogs = Catalog.find_all_by_pid("root")
 
     respond_to do |format|
       if @product.update_attributes(params[:product])

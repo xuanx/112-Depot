@@ -39,14 +39,34 @@
         <%= link_to 'Orders', orders_path %><br />
         <%= link_to 'Products', products_path %><br />
         <%= link_to 'Users', users_path %><br />
+        <%= link_to 'Catalogs', catalogs_path %><br />
         <br />
         <%= button_to 'Logout', logout_path, :method => :delete %>
       <% end %>
     </div>
 
     <div id="main">
-      <%= yield %><!-- <label id="code.depot.e.include"/> -->
+      <%= yield %>
     </div>
+
+    <div id="side_right">
+      <% catalogs = Catalog.find_all_by_pid("root") %>
+      <% while !catalogs.empty? %>
+        <span>+
+          <% catalog = catalogs.shift %>
+          <% catalogs = catalog.children + catalogs %>
+          <% catalog.depth.times do %>
+            -- 
+          <% end %>
+
+          <%= link_to "#{catalog.name}", store_path(:catalog => catalog.name) %>
+        </span> <br/>
+
+      <% end %>
+    </div>
+
+    <div id="space"></div>
+
   </div>
 
 </body>
