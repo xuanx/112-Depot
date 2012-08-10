@@ -13787,3 +13787,476 @@ Rendered carts/_cart.html.erb (1.0ms)
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
 Rendered store/index.html.erb within layouts/application (82.1ms)
 Completed 200 OK in 216ms (Views: 83.4ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/zh?catalog=Discrete+Mathematics" for 127.0.0.1 at Fri Aug 10 12:34:24 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh", "catalog"=>"Discrete Mathematics"}
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."name" = 'Discrete Mathematics'[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Discrete Mathematics'
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."catalog" = 'Discrete Mathematics' ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."name" = 'Discrete Mathematics'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Discrete Mathematics'[0m
+  [1m[35mCart Load (3.2ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 49 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 49)[0m
+Rendered carts/_cart.html.erb (0.9ms)
+  [1m[35mCatalog Load (0.4ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'root'
+  [1m[36mCatalog Load (0.4ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Programming'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.4ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C++'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'API'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'OOAD'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Ruby'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.4ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Mathematics'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Linear Algebra'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Matrix'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Vector'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Discrete Mathematics'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+Rendered store/index.html.erb within layouts/application (83.4ms)
+Completed 200 OK in 207ms (Views: 84.7ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/zh?catalog=Discrete+Mathematics" for 127.0.0.1 at Fri Aug 10 12:34:59 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh", "catalog"=>"Discrete Mathematics"}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."name" = 'Discrete Mathematics'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Discrete Mathematics'
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."catalog" = 'Discrete Mathematics' ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."name" = 'Discrete Mathematics'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Discrete Mathematics'[0m
+  [1m[35mCart Load (0.3ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 49 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 49)[0m
+Rendered carts/_cart.html.erb (0.9ms)
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'root'
+  [1m[36mCatalog Load (0.4ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Programming'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.4ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C++'[0m
+  [1m[35mCatalog Load (0.4ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'API'
+  [1m[36mCatalog Load (0.4ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'OOAD'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Ruby'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.4ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Mathematics'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Linear Algebra'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Matrix'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Vector'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Discrete Mathematics'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+Rendered store/index.html.erb within layouts/application (148.6ms)
+Completed 200 OK in 195ms (Views: 148.7ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/zh" for 127.0.0.1 at Fri Aug 10 12:35:12 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"zh", "set_locale"=>"en", "authenticity_token"=>"VECK6pRqJNxrUbonrv//CbtDMD1BCxLPZNiDF2iKDuk=", "utf8"=>"✓"}
+Redirected to http://127.0.0.1:3000/en
+Completed 302 Found in 2ms
+
+
+Started GET "/en" for 127.0.0.1 at Fri Aug 10 12:35:12 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mProduct Load (0.7ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."name" IS NULL
+  [1m[36mCart Load (0.3ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 49 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 49)
+Rendered carts/_cart.html.erb (0.8ms)
+  [1m[36mCatalog Load (0.4ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'root'[0m
+  [1m[35mCatalog Load (0.4ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Programming'
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C++'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'API'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'OOAD'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Ruby'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Mathematics'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Linear Algebra'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Matrix'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Vector'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Discrete Mathematics'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+Rendered store/index.html.erb within layouts/application (192.6ms)
+Completed 200 OK in 232ms (Views: 192.7ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/en/line_items?product_id=9" for 127.0.0.1 at Fri Aug 10 12:35:14 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"locale"=>"en", "authenticity_token"=>"VECK6pRqJNxrUbonrv//CbtDMD1BCxLPZNiDF2iKDuk=", "product_id"=>"9"}
+  [1m[36mCart Load (0.3ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 49 LIMIT 1[0m
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 9 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 9 AND ("line_items".cart_id = 49) LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "line_items" ("updated_at", "product_id", "cart_id", "quantity", "order_id", "created_at") VALUES ('2012-08-10 04:35:14.462630', 9, 49, 1, NULL, '2012-08-10 04:35:14.462630')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 49)[0m
+  [1m[35mLineItem Load (0.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 49)
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 9 ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (5.6ms)
+Rendered carts/_cart.html.erb (14.8ms)
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM("line_items"."quantity") AS sum_id FROM "line_items" WHERE ("line_items".cart_id = 49)
+Rendered line_items/create.js.rjs (20.3ms)
+Completed 200 OK in 334ms (Views: 29.7ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/en/line_items?product_id=10" for 127.0.0.1 at Fri Aug 10 12:35:16 +0800 2012
+  Processing by LineItemsController#create as JS
+  Parameters: {"locale"=>"en", "authenticity_token"=>"VECK6pRqJNxrUbonrv//CbtDMD1BCxLPZNiDF2iKDuk=", "product_id"=>"10"}
+  [1m[36mCart Load (0.3ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 49 LIMIT 1[0m
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 10 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.3ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 10 AND ("line_items".cart_id = 49) LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "line_items" ("order_id", "product_id", "cart_id", "created_at", "quantity", "updated_at") VALUES (NULL, 10, 49, '2012-08-10 04:35:16.930697', 1, '2012-08-10 04:35:16.930697')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 49)[0m
+  [1m[35mLineItem Load (0.4ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 49)
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 9 ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 10 ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (9.1ms)
+Rendered carts/_cart.html.erb (21.4ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT SUM("line_items"."quantity") AS sum_id FROM "line_items" WHERE ("line_items".cart_id = 49)[0m
+Rendered line_items/create.js.rjs (27.2ms)
+Completed 200 OK in 315ms (Views: 36.1ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/en/carts/49" for 127.0.0.1 at Fri Aug 10 12:35:21 +0800 2012
+  Processing by CartsController#destroy as HTML
+  Parameters: {"locale"=>"en", "authenticity_token"=>"VECK6pRqJNxrUbonrv//CbtDMD1BCxLPZNiDF2iKDuk=", "id"=>"49"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCart Load (0.2ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 49 LIMIT 1[0m
+  [1m[35mLineItem Load (0.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 49)
+  [1m[36mAREL (0.3ms)[0m  [1mDELETE FROM "line_items" WHERE "line_items"."id" = 59[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "line_items" WHERE "line_items"."id" = 60
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "carts" WHERE "carts"."id" = 49[0m
+Redirected to http://127.0.0.1:3000/en
+Completed 302 Found in 165ms
+
+
+Started GET "/en" for 127.0.0.1 at Fri Aug 10 12:35:22 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mProduct Load (0.7ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."name" IS NULL
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at") VALUES ('2012-08-10 04:35:22.288695', '2012-08-10 04:35:22.288695')[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 50)
+Rendered carts/_cart.html.erb (0.9ms)
+  [1m[36mCatalog Load (0.4ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'root'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Programming'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C++'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'API'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'OOAD'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Ruby'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.4ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Mathematics'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.4ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Linear Algebra'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Matrix'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Vector'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Discrete Mathematics'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+Rendered store/index.html.erb within layouts/application (96.4ms)
+Completed 200 OK in 352ms (Views: 97.4ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/carts" for 127.0.0.1 at Fri Aug 10 12:35:34 +0800 2012
+  Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCart Load (0.3ms)[0m  SELECT "carts".* FROM "carts"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'root'
+  [1m[36mCatalog Load (0.4ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Programming'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.4ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C++'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'API'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.6ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'OOAD'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Ruby'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.4ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Mathematics'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Linear Algebra'
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Matrix'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Vector'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Discrete Mathematics'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+Rendered carts/index.html.erb within layouts/application (74.5ms)
+Completed 200 OK in 176ms (Views: 75.2ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/en/carts/50" for 127.0.0.1 at Fri Aug 10 12:35:38 +0800 2012
+  Processing by CartsController#destroy as HTML
+  Parameters: {"locale"=>"en", "authenticity_token"=>"VECK6pRqJNxrUbonrv//CbtDMD1BCxLPZNiDF2iKDuk=", "id"=>"50"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCart Load (0.2ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 50 LIMIT 1[0m
+  [1m[35mLineItem Load (0.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 50)
+  [1m[36mAREL (0.3ms)[0m  [1mDELETE FROM "carts" WHERE "carts"."id" = 50[0m
+Redirected to http://127.0.0.1:3000/en
+Completed 302 Found in 245ms
+
+
+Started GET "/en" for 127.0.0.1 at Fri Aug 10 12:35:39 +0800 2012
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mProduct Load (0.8ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."name" IS NULL
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "carts" ("updated_at", "created_at") VALUES ('2012-08-10 04:35:39.312300', '2012-08-10 04:35:39.312300')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 51)
+Rendered carts/_cart.html.erb (0.8ms)
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'root'[0m
+  [1m[35mCatalog Load (0.4ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Programming'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C++'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'API'[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'OOAD'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Ruby'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Mathematics'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Linear Algebra'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Matrix'
+  [1m[36mCatalog Load (3.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Vector'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Discrete Mathematics'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+Rendered store/index.html.erb within layouts/application (158.9ms)
+Completed 200 OK in 377ms (Views: 156.8ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/carts" for 127.0.0.1 at Fri Aug 10 12:35:43 +0800 2012
+  Processing by CartsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCart Load (0.3ms)[0m  SELECT "carts".* FROM "carts"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'root'
+  [1m[36mCatalog Load (0.4ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Programming'[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.4ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C++'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'API'
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'OOAD'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Ruby'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Mathematics'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Linear Algebra'
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Matrix'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Vector'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Discrete Mathematics'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+Rendered carts/index.html.erb within layouts/application (69.9ms)
+Completed 200 OK in 99ms (Views: 71.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/carts" for 127.0.0.1 at Fri Aug 10 12:35:46 +0800 2012
+  Processing by CartsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCart Load (0.6ms)[0m  [1mSELECT "carts".* FROM "carts"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'root'[0m
+  [1m[35mCatalog Load (0.4ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Programming'
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C++'
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'API'[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'OOAD'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='C++') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'C'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Ruby'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Programming') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Mathematics'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+  [1m[36mCatalog Load (0.3ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Linear Algebra'[0m
+  [1m[35mCatalog Load (0.5ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Matrix'
+  [1m[36mCatalog Load (0.2ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.3ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Vector'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Linear Algebra') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1[0m
+  [1m[35mCatalog Load (0.2ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE "catalogs"."pid" = 'Discrete Mathematics'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "catalogs".* FROM "catalogs" WHERE (name='Mathematics') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "catalogs".* FROM "catalogs" WHERE (name='root') LIMIT 1
+Rendered carts/index.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 101ms (Views: 72.8ms | ActiveRecord: 7.5ms)
