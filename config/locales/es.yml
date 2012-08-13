@@ -40,6 +40,55 @@ es:
       pay_type_html:  "pagar&nbsp;con"
       pay_prompt_html:   "Seleccione un m&eacute;todo de pago"
       submit:    "Realizar Pedido"
+    index:
+      Listing orders:  "Listing orders"
+      Name:  "Name"
+      Address: "Address"
+      Email:   "Email"
+      Pay type: "Pay type"
+      Show:     "Show"
+      Edit:     "Edit"
+      Destroy:  "Destroy"
+      Are you sure?:   "Are you sure?"
+      New Order: "New Order"
+    show:
+      Edit:  "Edit"
+      Back:  "Back"
+    edit:
+      Editing order:  "Editing order"
+      Show:  "Show"
+      Back:  "Back"
+  products:
+    index:
+      Listing products: "Listing product"
+      Show:  "Show"
+      Edit:  "Edit"
+      Destroy: "Destroy"
+      Are you sure?:  "Are you sure?"
+      New product:    "New product"
+    form:
+      title:  "title"
+      description:  "description"
+      image_url:    "image_url"
+      price:    "price"
+      catalog:  "catalog"
+      Select A Catalog: "Select A Catalog"
+      submit:  "Update Product"
+    new:
+      New product: "New product"
+      Back:       "Back"
+    show:
+      Title:  "Title"
+      Product details: "Product details"
+      Price:  "Price"
+      Comments: "Comments"
+      Add comment: "Add comment"
+      Edit:  "Edit"
+      Back:  "Back"
+    edit:
+      Editing product: "Editing product"
+  product_create_success:  "Product was successfully created."
+  product_update_success:  "Product was successfully updated."
   activerecord:
     errors:
       messages:
@@ -54,9 +103,38 @@ es:
         email:    "E-mail"
         pay_type: "Forma de pago"
   errors:
-    template:
+    template_order:
+      body:       "Hay problemas con los siguientes campos:"
+      header:
+        one:      "1 error ha impedido uqe este %{model} se guarde"
+        other:    "%{count} errores han impedido que este %{model} se guarde"
+    template_product:
       body:       "Hay problemas con los siguientes campos:"
       header:
         one:      "1 error ha impedido uqe este %{model} se guarde"
         other:    "%{count} errores han impedido que este %{model} se guarde"
   thanks:         "Gracias por su pedido"
+  session:
+    new:
+      name:      "name"
+      password:  "password"
+      Login:     "Login"
+  users:
+    index:
+      Listing users: "Listing users"
+      Name:  "Name"
+      Show:  "Show"
+      Edit:  "Edit"
+      Destroy: "Destroy"
+      Are you sure?: "Are you sure?"
+      New User:  "New User"
+    edit:
+      Editing user: "Editing user"
+      Show:  "Show"
+      Back:  "Back"
+    form:
+      Enter User Details:  "Enter User Details"
+      Name:  "Name"
+      Password:  "Password"
+      Confirm:  "confirm"
+      submit:  "Update User"

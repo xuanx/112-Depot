@@ -2,23 +2,23 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 <h1>
-  <b>Title:</b>
+  <b><%= t('.Title') + ":" %></b>
   <%= @product.title %>
 </h1>
 
 <p>
-  <b>Product details:</b>
+  <b><%= t('.Product details') + ":" %></b>
   <%=sanitize @product.description %><br />
     <%= image_tag(@product.image_url) %>
 </p>
 
 
 <p>
-  <b>Price:</b>
+  <b><%= t('.Price') + ":" %></b>
   <%= @product.price %>
 </p>
 
-<h3>Comments:</h3>
+<h3><%= t('.Comments') + ":" %></h3>
 <% @product.comments.each do |comment| %>
 	<p>
     Commented <%= time_ago_in_words(comment.created_at)%>
@@ -30,19 +30,19 @@
 
 <%= form_for [@product, Comment.new] do |f| %>
   <p>
-    <%= f.label :content, "New comment:"%><br />
+    <%= f.label :content, t('.Comments') + ":" %><br />
     <%= f.text_area :content %>
   </p>
 
   <p>
-    <%= f.submit "Add comment"%>
+    <%= f.submit t('.Add comment') %>
   </p>
 <% end %>
 
 
 <br />
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to t('.Edit'), edit_product_path(@product) %> |
+<%= link_to t('.Back'), products_path %>
 
 
 

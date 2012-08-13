@@ -33,17 +33,66 @@ en:
         delimiter: ","
         format:    "%u%n"
   orders:
-     new:
+    new:
        legend:     "Please Enter your Details"
-     form:
+    form:
        name:       "Name"
        address_html:    "Address"
        email:      "E-mail"
        pay_type_html:   "Pay with"
        pay_prompt_html: "Select a payment method"
        submit:     "Place Order"
+    index:
+      Listing orders:  "Listing orders"
+      Name:  "Name"
+      Address: "Address"
+      Email:   "Email"
+      Pay type: "Pay type"
+      Show:     "Show"
+      Edit:     "Edit"
+      Destroy:  "Destroy"
+      Are you sure?:   "Are you sure?"
+      New Order: "New Order"
+    show:
+      Editing order:  "Editing order"
+      Edit:  "Edit"
+      Back:  "Back"
+    edit:
+      Show:  "Show"
+      Back:  "Back"
+  products:
+    index:
+      Listing products: "Listing product"
+      Show:  "Show"
+      Edit:  "Edit"
+      Destroy: "Destroy"
+      Are you sure?:  "Are you sure?"
+      New product:    "New product"
+    form:
+      title:  "title"
+      description:  "description"
+      image_url:    "image_url"
+      price:    "price"
+      catalog:  "catalog"
+      Select A Catalog: "Select A Catalog"
+      submit:  "Update Product"
+    new:
+      New product: "New product"
+      Back:       "Back"
+    show:
+      Title:  "Title"
+      Product details: "Product details"
+      Price:  "Price"
+      Comments: "Comments"
+      Add comment: "Add comment"
+      Edit:  "Edit"
+      Back:  "Back"
+    edit:
+      Editing product: "Editing product"
+  product_create_success:  "Product was successfully created."
+  product_update_success:  "Product was successfully updated."
   activerecord:
-    errors:
+    errors1:
       messages:
         inclusion_html: "is not include in the list"
         blank:     "can't be blank"
@@ -56,9 +105,38 @@ en:
         email:     "E-mail"
         pay_type:  "Pay-type"
   errors:
-    template:
+    template_order:
       body:       "There are problems with the following fields:"
       header:
         one:      "1 error prohibited this order from being saved"
         other:    "%{count} errores prohibited this order from being saved"
+    template_product:
+      body:       "There are problems with the following fields:"
+      header:
+        one:      "1 error prohibited this product from being saved"
+        other:    "%{count} errores prohibited this product from being saved"
   thanks:         "Thank you for your order"
+  session:
+    new:
+      name:      "name"
+      password:  "password"
+      Login:     "Login"
+  users:
+    index:
+      Listing users: "Listing users"
+      Name:  "Name"
+      Show:  "Show"
+      Edit:  "Edit"
+      Destroy: "Destroy"
+      Are you sure?: "Are you sure?"
+      New User:  "New User"
+    edit:
+      Editing user: "Editing user"
+      Show:  "Show"
+      Back:  "Back"
+    form:
+      Enter User Details:  "Enter User Details"
+      Name:  "Name"
+      Password:  "Password"
+      Confirm:  "confirm"
+      submit:  "Update User"

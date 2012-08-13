@@ -1,7 +1,7 @@
 <%= form_for @order do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
-      <%= t('errors.template.header', :count=>@order.errors.size,
+      <%= t('errors.template_order.header', :count=>@order.errors.size,
 	    :model=>t('activerecord.models.order')) %>:
       <ul>
       <% @order.errors.full_messages.each do |msg| %>

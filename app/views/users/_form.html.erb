@@ -14,25 +14,25 @@
     <% end %>
 
     <fieldset>
-      <legend>Enter User Details</legend>
+      <legend><%= t('.Enter User Details') %></legend>
 
       <div>
-        <%= f.label :name %>:
+        <%= f.label :name, t('.Name') %>:
         <%= f.text_field :name, :size => 40 %>
       </div>
 
       <div>
-        <%= f.label :passord, 'Passord' %>:
+        <%= f.label :password, t('.Password') %>:
         <%= f.password_field :password, :size => 40 %>
       </div>
 
       <div>
-        <%= f.label :passord_confirmation, 'Confirm' %>:
+        <%= f.label :passord_confirmation, t('.Confirm') %>:
         <%= f.password_field :password_confirmation, :size => 40 %>
       </div>
 
       <div>
-        <%= f.submit %>
+        <%= f.submit t('.submit')%>
       </div>
 
     </fieldset>
