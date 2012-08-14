@@ -116,8 +116,9 @@ en:
         one:      "1 error prohibited this product from being saved"
         other:    "%{count} errores prohibited this product from being saved"
   thanks:         "Thank you for your order"
-  session:
+  sessions:
     new:
+      Please Log In: "Please Log in"
       name:      "name"
       password:  "password"
       Login:     "Login"

@@ -114,8 +114,9 @@ es:
         one:      "1 error ha impedido uqe este %{model} se guarde"
         other:    "%{count} errores han impedido que este %{model} se guarde"
   thanks:         "Gracias por su pedido"
-  session:
+  sessions:
     new:
+      Please Log In: "Please Log in (es)"
       name:      "name"
       password:  "password"
       Login:     "Login"
