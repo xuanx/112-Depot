@@ -12,11 +12,12 @@ class User < ActiveRecord::Base
 
   validate :password_must_be_present
 
+  after_update  :ensure_an_admin_remains
   after_destroy :ensure_an_admin_remains
 
   def ensure_an_admin_remains
     if User.find_all_by_role(0).empty?
-      raise "Can't delete last administrator"
+      raise "Must keep at least a administrator existing !"
     end
   end
 
