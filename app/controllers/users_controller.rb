@@ -26,6 +26,10 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.xml
   def new
+    if current_user and current_user.role != 0
+      redirect_to store_url, :notice => "Please Logout before"
+      return
+    end
     @user = User.new
 
     respond_to do |format|
@@ -51,7 +55,7 @@ class UsersController < ApplicationController
       if @user.save
         #format.html { redirect_to(@user, :notice => 'User was successfully created.') }
         format.html { redirect_to(users_url,
-                                  :notice => 'User #{@user.name} was successfully created.') }
+                                  :notice => "User #{@user.name} was successfully created.") }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }

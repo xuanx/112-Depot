@@ -77,11 +77,17 @@ class CatalogsController < ApplicationController
   # DELETE /catalogs/1.xml
   def destroy
     @catalog = Catalog.find(params[:id])
-    @catalog.destroy
+    if !@catalog.children.empty?
+      redirect_to catalogs_url, :notice => "can't be destroy: Has son-catalog"
+    elsif !Product.find_all_by_catalog(@catalog.name).empty?
+      redirect_to catalogs_url, :notice => "can't be destroy: is being used by some products !"
+    else
+      @catalog.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(catalogs_url) }
-      format.xml  { head :ok }
+      respond_to do |format|
+        format.html { redirect_to(catalogs_url) }
+        format.xml  { head :ok }
+      end
     end
   end
 
