@@ -1,9 +1,23 @@
 class OrdersController < ApplicationController
-  skip_before_filter :authorize, :only => [:new, :create]
+  before_filter :ownerAuthorize, :only => [:show, :edit, :update, :destroy]
+
   # GET /orders
   # GET /orders.xml
+
+  def ownerAuthorize
+    order = Order.find_by_id(params[:id])
+    if !order or (current_user.role != 0 and order.uid != current_user.id)
+      redirect_to store_url, :notice => "Permission denied!"
+    end
+  end
+
   def index
-    @orders = Order.paginate(:page => params[:page], :per_page => 2, :order => 'updated_at DESC')  
+    if current_user.role == 0
+      @orders = Order.paginate(:page => params[:page], :per_page => 2, :order => 'updated_at DESC')  
+    else
+      @orders = Order.paginate(:page => params[:page], :per_page => 2, :order => 'updated_at DESC',
+                               :conditions => "uid = #{session[:user_id]}")  
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -47,6 +61,7 @@ class OrdersController < ApplicationController
   # POST /orders.xml
   def create
     @order = Order.new(params[:order])
+    @order.uid = session[:user_id]
     @order.add_line_items_from_cart(current_cart)
 
     respond_to do |format|

@@ -1,7 +1,10 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
+  USER_ROLE = {"administrator" => 0, "customer" => 1}
+  USER_ROLE2 = {0 => "administrator", 1 => "customer"}
   validates :name, :presence => true, :uniqueness => true
+  validates :role, :presence => true
 
   validates :password, :confirmation => true
   attr_accessor :password_confirmation

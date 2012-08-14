@@ -37,9 +37,11 @@
       <% if session[:user_id] %>
         <br />
         <%= link_to t('.Orders'), orders_path %><br />
-        <%= link_to t('.Products'), products_path %><br />
-        <%= link_to t('.Users'), users_path %><br />
-        <%= link_to t('.Catalogs'), catalogs_path %><br />
+        <% if User.find_by_id(session[:user_id]).role == 0 %>
+          <%= link_to t('.Products'), products_path %><br />
+          <%= link_to t('.Users'), users_path %><br />
+          <%= link_to t('.Catalogs'), catalogs_path %><br />
+        <% end %>
         <br />
         <%= button_to t('.Logout'), logout_path, :method => :delete %>
       <% end %>

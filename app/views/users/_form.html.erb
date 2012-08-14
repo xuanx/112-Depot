@@ -30,6 +30,12 @@
         <%= f.label :passord_confirmation, t('.Confirm') %>:
         <%= f.password_field :password_confirmation, :size => 40 %>
       </div>
+      <% if User.find_by_id(session[:user_id]) and User.find_by_id(session[:user_id]).role == 0 %>
+        <div>
+          <%= f.label :role, "Role" %>:
+          <%= f.select :role, User::USER_ROLE, :prompt => "Select a role" %>
+        </div>
+      <% end %>
 
       <div>
         <%= f.submit t('.submit')%>

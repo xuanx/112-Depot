@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_filter :authorize, :only => [:new, :create]
+  before_filter :managerAuthorize, :only => [:index, :show, :edit, :update, :destroy]
   # GET /users
   # GET /users.xml
   def index
@@ -41,6 +43,9 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
+    if current_user == nil or current_user.role !=0
+      @user.role = 1
+    end
 
     respond_to do |format|
       if @user.save

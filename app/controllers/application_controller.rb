@@ -14,6 +14,11 @@ class ApplicationController < ActionController::Base
     cart
   end
 
+  def current_user
+    User.find_by_id(session[:user_id])
+  end
+
+
   protected
 
   def authorize
@@ -21,6 +26,13 @@ class ApplicationController < ActionController::Base
       redirect_to login_url, :notice => "Please log in"
     end
   end
+
+  def managerAuthorize
+    if current_user.role != 0
+      redirect_to store_url, :notice => "Permission denied!"
+    end
+  end
+
 
   protected
 

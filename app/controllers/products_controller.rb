@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :managerAuthorize
   # GET /products
   # GET /products.xml
   def index

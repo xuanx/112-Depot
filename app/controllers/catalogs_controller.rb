@@ -1,4 +1,6 @@
 class CatalogsController < ApplicationController
+  before_filter :managerAuthorize
+  
   # GET /catalogs
   # GET /catalogs.xml
   def index

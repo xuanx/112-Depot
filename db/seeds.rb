@@ -4,6 +4,7 @@ Cart.delete_all
 Order.delete_all
 LineItem.delete_all
 Catalog.delete_all
+User.delete_all
 
 Product.create(:title => 'Web Design for Developers',
   :description => 
@@ -46,7 +47,7 @@ Product.create(:title => 'Rails Test Prescriptions',
   :price => 43.75,
   :catalog => "C++")
 
-User.create(:name => 'dave', :password => 'secret', :password_confirmation => 'secret')
+User.create(:name => 'dave', :password => 'secret', :password_confirmation => 'secret', :role => 0)
 
 
 Catalog.create(:name => "Programming", :pid => "root")
