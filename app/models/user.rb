@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
   after_destroy :ensure_an_admin_remains
 
   def ensure_an_admin_remains
-    if User.count.zero?
-      raise "Can't delete last user"
+    if User.find_all_by_role(0).empty?
+      raise "Can't delete last administrator"
     end
   end
 
