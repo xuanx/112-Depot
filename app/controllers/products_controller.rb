@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_filter :managerAuthorize
+  skip_before_filter :authorize, :only => :show
+  before_filter :managerAuthorize, :only => [:index, :new, :edit, :create, :update, :destroy]
   # GET /products
   # GET /products.xml
   def index
