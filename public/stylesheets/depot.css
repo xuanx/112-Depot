@@ -240,3 +240,12 @@
 		float:right;
 		padding-top: 0.2em;
 }
+
+#blank_comment{
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  border:2px solid;
+  padding:5px;
+}

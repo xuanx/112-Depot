@@ -1,6 +1,8 @@
 <% if notice %>
   <p id="notice"><%= notice %></p>
 <% end %>
+<div id="blank_comment"> <%= flash[:error] %> </div>
+
 <h1>
   <b><%= t('.Title') + ":" %></b>
   <%= @product.title %>
@@ -22,7 +24,7 @@
 <% @product.comments.each do |comment| %>
   <div id="comment">
     <div id="comment_interval"></div> 
-    <div id="commenter"><strong><%= @user.name %></strong></div>
+    <div id="commenter"><strong><%=  User.find_by_id(comment.user_id).name  %></strong></div>
     <div id="comment_time"><%= comment.created_at.to_s(:db) %></div>
     <br/><br/>
     <div id="comment_content"><%= comment.content %></div><br/>
@@ -30,16 +32,18 @@
 <% end %>
 
 
-<%= form_for [@product, Comment.new] do |f| %>
-  <p>
-    <%= f.label :content, "New comment:"%><br />
-    <%= f.text_area :content %>
-  </p>
-  <p>
-    <%= f.submit t('.Add comment') %>
-  </p>
+<% if @user != nil  %>
+  <%= form_for [@product, Comment.new] do |f| %>
+    
+    <p>
+      <%= f.label :content, "New comment:"%><br />
+      <%= f.text_area :content %>
+    </p> 
+    <p>
+      <%= f.submit t('.Add comment') %>
+    </p>
+  <% end %>
 <% end %>
-
 
 <br />
 <%= link_to t('.Edit'), edit_product_path(@product) %> |
