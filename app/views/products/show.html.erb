@@ -1,7 +1,9 @@
 <% if notice %>
   <p id="notice"><%= notice %></p>
 <% end %>
-<div id="blank_comment"> <%= flash[:error] %> </div>
+<%if flash[:error] != nil %> 
+    <div id="blank_comment"> <%= flash[:error] %> </div>
+<% end %>
 
 <h1>
   <b><%= t('.Title') + ":" %></b>
