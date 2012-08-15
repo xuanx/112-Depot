@@ -30,7 +30,7 @@ Product.create(:title => 'Programming Ruby 1.9',
       </p>},
   :image_url => '/images/ruby.jpg',
   :price => 49.50,
-  :catalog => "C++")
+  :catalog => "API")
 # . . .
 
 Product.create(:title => 'Rails Test Prescriptions',
@@ -45,7 +45,7 @@ Product.create(:title => 'Rails Test Prescriptions',
       </p>},
   :image_url => '/images/rtp.jpg',
   :price => 43.75,
-  :catalog => "C++")
+  :catalog => "Vector")
 
 User.create(:name => 'dave', :password => 'secret', :password_confirmation => 'secret', :role => 0)
 
