@@ -68,17 +68,23 @@ class UsersController < ApplicationController
   # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
-    begin
-      @user.update_attributes(params[:user])
-      flash[:notice] = "User#{@user.name} was successfully updated."
-
-    rescue Exception => e
-      flash[:notice] = e.message
-    end
 
     respond_to do |format|
-      format.html { redirect_to(users_url) }
-      format.xml  { head :ok }
+      begin
+        if @user.update_attributes(params[:user])
+          format.html { redirect_to(users_url,
+                                    :notice => "User #{@user.name} was successfully updated.") }
+          format.xml  { head :ok}
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+        end
+
+      rescue Exception => e
+        flash[:notice] = e.message
+        format.html { render :action => "edit" }
+        format.xml  { head :ok, :status => :unprocessable_entity }
+      end
     end
   end
 

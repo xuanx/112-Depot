@@ -27,7 +27,7 @@
       </div>
 
       <div>
-        <%= f.label :passord_confirmation, t('.Confirm') %>:
+        <%= f.label :password_confirmation, t('.Confirm') %>:
         <%= f.password_field :password_confirmation, :size => 40 %>
       </div>
       <% if User.find_by_id(session[:user_id]) and User.find_by_id(session[:user_id]).role == 0 %>
