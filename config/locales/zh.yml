@@ -96,7 +96,7 @@ zh:
       Back:  "返回"
   Comment_cannot_be_blank: "评论不能为空白!"
   product_create_success: "新商品创建成功"
-  product_update_seccess:  "商品信息更新成功"
+  product_update_success:  "商品信息更新成功"
   image_valid: "必须是一段以GIF, JPG 或者 PNG结尾的url路径"
   activerecord:
     errors:
