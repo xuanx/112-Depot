@@ -182,6 +182,7 @@ zh:
       New user:  "新用户"
       Back:    "返回"
   Logged out: "用户已退出"
+  Invalid user/password conbination: "错误的用户名或者密码"
   catalogs:
     index:
       Listing catalogs:  "商品分类目录列表"

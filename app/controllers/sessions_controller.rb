@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to admin_url
     else
-      redirect_to login_url, :alert => 'Invalid user/password conbination'
+      redirect_to login_url, :alert => I18n.t('.Invalid user/password conbination')
     end
   end
 

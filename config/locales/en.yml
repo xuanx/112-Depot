@@ -182,6 +182,7 @@ en:
       New user:  "New user"
       Back:   "Back"
   Logged out: "Logged New userout:"
+  Invalid user/password conbination: "Invalid user/password conbination"
   catalogs:
     index:
        Listing catalogs:  "Listing catalogs"
