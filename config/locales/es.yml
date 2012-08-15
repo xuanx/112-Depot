@@ -11,6 +11,9 @@ es:
       Users:     "Users"
       Catalogs:  "Catalogs"
       Logout:    "Logout"
+      Home:      "Home"
+      Login:     "Login"
+      Register:  "Register"
   store:
     index:
       title_html:  "Su Cat&aacute;logo de Pragmatic"
@@ -58,6 +61,7 @@ es:
       Editing order:  "Editing order"
       Show:  "Show"
       Back:  "Back"
+  cart_empty_add_something:  "Your cart is empty.please take something."
   products:
     index:
       Listing products: "Listing product"
@@ -82,26 +86,45 @@ es:
       Product details: "Product details"
       Price:  "Price"
       Comments: "Comments"
+      content:  "New comment:"
       Add comment: "Add comment"
       Edit:  "Edit"
       Back:  "Back"
     edit:
       Editing product: "Editing product"
+  Comment_cannot_be_blank: "Comment can't be blank!"
   product_create_success:  "Product was successfully created."
   product_update_success:  "Product was successfully updated."
+  image_valid:  "must be a URL for GIF, JPG or PNG."
   activerecord:
     errors:
       messages:
         inclusion: "no est&aacute; incluido en la lista"
         blank:     "no puede quedar en blanco"
+        not_a_number:  "not a number"
+        taken:     "is not correct"
+        confirmation:  "confirmation is not correct"
     models:
       order:      "pedido"
+      product:    "product"
+      user:       "user"
     attributes:
       order:
         address_html:  "Direcci&oacute;n"
         name:     "Nombre"
         email:    "E-mail"
         pay_type: "Forma de pago"
+      product:
+        title:    "title"
+        description: "description"
+        image_url:  "image url"
+        price:     "price"
+        catalog:   "catalog"
+      user:
+        name:    "Name"
+        password: "Password"
+        confirmation:   "Confirm"
+        role:      "Role"
   errors:
     template_order:
       body:       "Hay problemas con los siguientes campos:"
@@ -113,6 +136,11 @@ es:
       header:
         one:      "1 error ha impedido uqe este %{model} se guarde"
         other:    "%{count} errores han impedido que este %{model} se guarde"
+    template_user:
+      body:       "There are problems with the following fields:"
+      header:
+        one:      "1 error prohibited this user from being saved"
+        other:    "%{count} errores prohibited this user from being saved"
   thanks:         "Gracias por su pedido"
   sessions:
     new:
@@ -138,4 +166,43 @@ es:
       Name:  "Name"
       Password:  "Password"
       Confirm:  "confirm"
+      Role:     "Role"
+      Select a role:  "Select a role"
       submit:  "Update User"
+    show: 
+      Name:   "Name:"
+      Hashed password: "Hashed password:"
+      Salt:  "Salt:"
+      Role:  "Role:"
+      Edit:  "Edit"
+      Back:  "Back"
+    new: 
+      New user:  "New user"
+      Back:   "Back"
+  Logged out: "Logged out"
+  catalogs:
+    index:
+       Listing catalogs:  "Listing catalogs"
+       Show:  "Show"
+       Edit:  "Edit"
+       Destroy: "Destroy"
+       Are you sure:  "Are you sure?"
+       New Child:   "New Child"
+       New Catalog: "New Catalog"
+    new:
+      New catalog: "New catalog"
+      Back: "Back"
+    form:
+      name:  "name"
+      submit: "Create Catalog"
+    edit:
+      Editing catalog:  "Editing catalog"
+      Show:  "Show"
+      Back:  "Back"
+    show:
+      Name:  "Name:"
+      Pid:   "Pid:"
+      Edit:  "Edit"
+      Back:  "Back"
+  Catalog was successfully created: "Catalog was successfully created."
+  Catalog was successfully updated: "Catalog was successfully updated."

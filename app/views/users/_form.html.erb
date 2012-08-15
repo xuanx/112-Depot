@@ -3,7 +3,8 @@
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <%= t('errors.template_user.header', :count=>@user.errors.size,
+	     :model=>t('.activerecord.models.user')) %>
 
         <ul>
           <% @user.errors.full_messages.each do |msg| %>
@@ -17,23 +18,24 @@
       <legend><%= t('.Enter User Details') %></legend>
 
       <div>
-        <%= f.label :name, t('.Name') %>:
+        <%= f.label :name, t('.Name') %>
         <%= f.text_field :name, :size => 40 %>
       </div>
 
       <div>
-        <%= f.label :password, t('.Password') %>:
+        <%= f.label :password, t('.Password') %>
         <%= f.password_field :password, :size => 40 %>
       </div>
 
       <div>
-        <%= f.label :password_confirmation, t('.Confirm') %>:
+        <%= f.label :passord_confirmation, t('.Confirm') %>
         <%= f.password_field :password_confirmation, :size => 40 %>
       </div>
+	  
       <% if User.find_by_id(session[:user_id]) and User.find_by_id(session[:user_id]).role == 0 %>
         <div>
-          <%= f.label :role, "Role" %>:
-          <%= f.select :role, User::USER_ROLE, :prompt => "Select a role" %>
+          <%= f.label :role, t('.Role') %>
+          <%= f.select :role, User::USER_ROLE, :prompt => t('.Select a role') %>
         </div>
       <% end %>
 

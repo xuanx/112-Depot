@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b><%= t('.Name') %></b>
   <%= @catalog.name %>
 </p>
 
 <p>
-  <b>Pid:</b>
+  <b><%= t('.Pid') %></b>
   <%= @catalog.pid %>
 </p>
 
 
-<%= link_to 'Edit', edit_catalog_path(@catalog) %> |
-<%= link_to 'Back', catalogs_path %>
+<%= link_to t('.Edit'), edit_catalog_path(@catalog) %> |
+<%= link_to t('.Back'), catalogs_path %>

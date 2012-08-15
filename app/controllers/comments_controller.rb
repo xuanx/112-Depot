@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
         redirect_to @product
 
       else
-      	flash[:error] = "Comment can't be blank!"
+      	flash[:error] = I18n.t('.Comment_cannot_be_blank')
       	redirect_to @product
       end
   end

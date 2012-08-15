@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
   # GET /orders/new.xml
   def new
     if current_cart.line_items.empty?
-      redirect_to store_url, :notice => "Your cart is empty.plz take something.."
+      redirect_to store_url, :notice => I18n.t('.cart_empty_add_something.')
       return
     end
     

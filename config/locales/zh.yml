@@ -12,6 +12,9 @@ zh:
       Users:     "用户管理"
       Catalogs:  "商品分类"
       Logout:    "退出登录" 
+      Home:      "主页"
+      Login:     "登录"
+      Register:  "注册"	  
   store:
     index:
       title_html:  "求实书城商品目录"
@@ -58,6 +61,7 @@ zh:
       Editing order:  "编辑订单"
       Show:  "显示订单"
       Back:  "返回"
+  cart_empty_add_something: "购物车不能为空，请先添加商品进购物车。"
   products:
     index:
       Listing products: "商品列表"
@@ -82,6 +86,7 @@ zh:
       Product details: "商品详细信息"
       Price:  "价格"
       Comments: "评论"
+      content:  "新评论:"
       Add comment: "发布评论"
       Edit:  "编辑产品信息"
       Back:  "返回"
@@ -89,16 +94,22 @@ zh:
       Editing product: "修改商品信息"
       Show:  "显示商品信息"
       Back:  "返回"
+  Comment_cannot_be_blank: "评论不能为空白!"
   product_create_success: "新商品创建成功"
   product_update_seccess:  "商品信息更新成功"
+  image_valid: "必须是一段以GIF, JPG 或者 PNG结尾的url路径"
   activerecord:
     errors:
       messages:
         inclusion: "目录中没有"
         blank:     "不能为空白"
+        not_a_number: "不是一个合法的数"
+        taken:   "不正确"
+        confirmation: "确认不正确"
     models:
       order:      "订单"
       product:    "商品"
+      user:       "用户"
     attributes:
       order:
         address:  "地址栏"
@@ -111,6 +122,11 @@ zh:
         image_url:  "图片路径"
         price:     "价格"
         catalog:   "分类目录"
+      user:
+        name:    "姓名"
+        password: "密码"
+        confirmation:   "密码确认"
+        role:      "新用户角色"
   errors:
     template_order:
       body:       "下面区域填写有错："
@@ -122,7 +138,11 @@ zh:
       header:
         one:      "由于一个错误您的商品不能被保存"
         other:    "由于%{count} 个错误您的商品不能被保存"
-  
+    template_user:
+      body:       "下面区域填写有错"
+      header:
+        one:      "由于一个错误您的用户不能被保存"
+        other:    "由于%{count} 个错误您的用户不能被保存"
   thanks:         "感谢您的购买，祝您购物愉快"
   sessions:
     new:
@@ -148,4 +168,43 @@ zh:
       Name:  "姓名"
       Password: "密码"
       Confirm:  "密码确认"
+      Role:     "新用户角色"
+      Select a role:  "选择一个用户角色"
       submit: "增加新用户"
+    show:
+      Name:   "姓名:"
+      Hashed password: "哈希密码:"
+      Salt:  "盐值:"
+      Role:  "角色:"
+      Edit:   "编辑"
+      Back:   "返回"
+    new: 
+      New user:  "新用户"
+      Back:    "返回"
+  Logged out: "用户已退出"
+  catalogs:
+    index:
+      Listing catalogs:  "商品分类目录列表"
+      Show:  "显示分类目录"
+      Edit:  "编辑分类目录"
+      Destroy: "删除分类目录"
+      Are you sure:  "确定删除分类目录?"
+      New Child:   "创建子目录"
+      New Catalog: "新建分类目录"
+    new:
+      New catalog: "新建分类目录"
+      Back:   "返回"
+    form:
+      name:  "请输入目录名称"
+      submit: "创建目录"
+    edit:
+      Editing catalog:  "编辑目录"
+      Show:  "显示目录"
+      Back:  "返回"
+    show:
+      Name:  "名称:"
+      Pid:   "上一级目录id:"
+      Edit:  "编辑"
+      Back:  "返回"
+  Catalog was successfully created: "目录成功创建"
+  Catalog was successfully updated: "目录成功更新"

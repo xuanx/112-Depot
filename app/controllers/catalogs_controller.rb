@@ -48,7 +48,7 @@ class CatalogsController < ApplicationController
 
     respond_to do |format|
       if @catalog.save
-        format.html { redirect_to(@catalog, :notice => 'Catalog was successfully created.') }
+        format.html { redirect_to(@catalog, :notice => I18n.t('.Catalog was successfully created'))}
         format.xml  { render :xml => @catalog, :status => :created, :location => @catalog }
       else
         format.html { render :action => "new" }
@@ -64,7 +64,7 @@ class CatalogsController < ApplicationController
 
     respond_to do |format|
       if @catalog.update_attributes(params[:catalog])
-        format.html { redirect_to(@catalog, :notice => 'Catalog was successfully updated.') }
+        format.html { redirect_to(@catalog, :notice => I18n.t('.Catalog was successfully updated')) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

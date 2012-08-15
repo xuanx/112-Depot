@@ -14,6 +14,9 @@ en:
       Users:     "Users"
       Catalogs:  "Catalogs"
       Logout:    "Logout"
+      Home:      "Home"
+      Login:     "Login"
+      Register:  "Register"
   store:
     index:
       title_html:  "Your Pragmatic Catalog"
@@ -60,6 +63,7 @@ en:
     edit:
       Show:  "Show"
       Back:  "Back"
+  cart_empty_add_something:  "Your cart is empty.please take something."
   products:
     index:
       Listing products: "Listing product"
@@ -84,26 +88,45 @@ en:
       Product details: "Product details"
       Price:  "Price"
       Comments: "Comments"
+      content:  "New comment:"
       Add comment: "Add comment"
       Edit:  "Edit"
       Back:  "Back"
     edit:
       Editing product: "Editing product"
+  Comment_cannot_be_blank: "Comment can't be blank!"
   product_create_success:  "Product was successfully created."
   product_update_success:  "Product was successfully updated."
+  image_valid:  "must be a URL for GIF, JPG or PNG."
   activerecord:
     errors1:
       messages:
         inclusion_html: "is not include in the list"
         blank:     "can't be blank"
+        not_a_number:  "not a number"
+        taken:   "is not correct"
+        confirmation: "comfirmation is not correct"
     models:
       order:       "order"
+      product:     "product"
+      user:        "user"
     attributes:
       order:
         address_html:   "Address"
         name:      "Name"
         email:     "E-mail"
         pay_type:  "Pay-type"
+      product:
+        title:    "title"
+        description: "description"
+        image_url:  "image url"
+        price:     "price"
+        catalog:   "catalog"
+      user:
+        name:    "Name"
+        password: "Password"
+        confirmation:   "Confirm"
+        role:      "Role"
   errors:
     template_order:
       body:       "There are problems with the following fields:"
@@ -115,6 +138,11 @@ en:
       header:
         one:      "1 error prohibited this product from being saved"
         other:    "%{count} errores prohibited this product from being saved"
+    template_user:
+      body:       "There are problems with the following fields:"
+      header:
+        one:      "1 error prohibited this user from being saved"
+        other:    "%{count} errores prohibited this user from being saved"
   thanks:         "Thank you for your order"
   sessions:
     new:
@@ -140,4 +168,43 @@ en:
       Name:  "Name"
       Password:  "Password"
       Confirm:  "confirm"
+      Role:     "Role"
+      Select a role:  "Select a role"
       submit:  "Update User"
+    show: 
+      Name:   "Name:"
+      Hashed password: "Hashed password:"
+      Salt:   "Salt:"
+      Role:   "Role:"
+      Edit:  "Edit"
+      Back:   "Back"
+    new: 
+      New user:  "New user"
+      Back:   "Back"
+  Logged out: "Logged New userout:"
+  catalogs:
+    index:
+       Listing catalogs:  "Listing catalogs"
+       Show:  "Show"
+       Edit:  "Edit"
+       Destroy: "Destroy"
+       Are you sure:  "Are you sure?"
+       New Child:   "New Child"
+       New Catalog: "New Catalog"
+    new:
+      New catalog: "New catalog"
+      Back: "Back"
+    form:
+      name:  "name"
+      submit: "Create Catalog"
+    edit:
+      Editing catalog:  "Editing catalog"
+      Show:  "Show"
+      Back:  "Back"
+    show:
+      Name:  "Name:"
+      Pid:   "Pid:"
+      Edit:  "Edit"
+      Back:  "Back"
+  Catalog was successfully created: "Catalog was successfully created."
+  Catalog was successfully updated: "Catalog was successfully updated."
