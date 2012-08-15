@@ -1,6 +1,8 @@
 Depot::Application.routes.draw do
 
 
+  get "help" => "help#index"
+
   resources :catalogs
 
   #get "admin/index"

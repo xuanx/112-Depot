@@ -46,7 +46,9 @@
 		<% else %>
 			<li class="top_user_login"><%= link_to t('.Login'), login_path %></li>
 			<li class="top_user_register"><%= link_to t('.Register'), new_user_path %></li>
-		<% end %>
+    <% end %>
+
+    <li><%= link_to "Help", help_path %></li>
 		</ul> 
     
   </div>
