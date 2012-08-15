@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
 
       if @comment.save
         redirect_to @product
-
       else
       	flash[:error] = I18n.t('.Comment_cannot_be_blank')
       	redirect_to @product
