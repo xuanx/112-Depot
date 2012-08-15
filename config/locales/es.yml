@@ -3,6 +3,7 @@ es:
     application:
       title:     "Publicaciones de Pragmatic"
       home:      "Inicio"
+      help:      "Help"
       questions: "Preguntas"
       news:     "Noticias"
       contact:   "Contacto"

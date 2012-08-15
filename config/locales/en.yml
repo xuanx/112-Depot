@@ -6,6 +6,7 @@ en:
     application:
       title:     "Pragmatic Bookshelf"
       home:      "Home"
+      help:      "Help"
       questions: "Questions"
       new:       "New"
       contact:   "Contact"
@@ -181,7 +182,7 @@ en:
     new: 
       New user:  "New user"
       Back:   "Back"
-  Logged out: "Logged out:"
+  Logged out: "Logged out"
   Invalid user/password conbination: "Invalid user/password conbination"
   catalogs:
     index:
