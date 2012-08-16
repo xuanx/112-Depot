@@ -1,4 +1,6 @@
 class Catalog < ActiveRecord::Base
+  validates :name, :presence => true, :uniqueness => true
+
   def children
       Catalog.find_all_by_pid(self.name)
   end
